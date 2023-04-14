@@ -93,124 +93,124 @@ const PlayerCard = ({ name }) => (
 );
 
 const playerData = [
-    {
-      "name": "Messi",
-      "nationality": "Argentina 🇦🇷",
-      "photo": Messi,
-      "index": 1
-    },
-    {
-      "name": "Cristiano Ronaldo",
-      "nationality": "Portugal 🇵🇹",
-      "photo": CR7,
-      "index": 2
-    },
-    {
-      "name": "Pele",
-      "nationality": "Brazil 🇧🇷",
-      "photo": Pele,
-      "index": 3
-    },
-    {
-      "name": "Maradona",
-      "nationality": "Argentina 🇦🇷",
-      "photo": Maradona,
-      "index": 4
-    },
-    {
-      "name": "Johan Cruyff",
-      "nationality": "Netherlands 🇳🇱",
-      "photo": JohanCruyff,
-      "index": 5
-    },
-    {
-      "name": "Zinedine Zidane",
-      "nationality": "France 🇫🇷",
-      "photo": ZinedineZidane,
-      "index": 6
-    },
-    {
-      "name": "Alfredo Di Stefano",
-      "nationality": "Argentina 🇦🇷",
-      "photo": AlfredoDiStefano,
-      "index": 7
-    },
-    {
-      "name": "Garrincha",
-      "nationality": "Brazil 🇧🇷",
-      "photo": Garrincha,
-      "index": 8
-    },
-    {
-      "name": "Ronaldo Nazario",
-      "nationality": "Brazil 🇧🇷",
-      "photo": R9,
-      "index": 9
-    },
-    {
-      "name": "Ronaldinho",
-      "nationality": "Brazil 🇧🇷",
-      "photo": Ronaldinho,
-      "index": 10
-    },
-    {
-      "name": "Michel Platini",
-      "nationality": "France 🇫🇷",
-      "photo": Platini,
-      "index": 11
-    },
-    {
-      "name": "Franz Beckenbauer",
-      "nationality": "Germany 🇩🇪",
-      "photo": Beckenbauer,
-      "index": 12
-    },
-    {
-      "name": "George Best",
-      "nationality": "Northern Ireland 🇬🇧",
-      "photo": GeorgeBest,
-      "index": 13
-    },
-    {
-      "name": "Andres Iniesta",
-      "nationality": "Spain 🇪🇸",
-      "photo": Iniesta,
-      "index": 14
-    },
-    {
-      "name": "Xavi Hernandez",
-      "nationality": "Spain 🇪🇸",
-      "photo": Xavi,
-      "index": 15
-    },
-    {
-      "name": "Paolo Maldini",
-      "nationality": "Italy 🇮🇹",
-      "photo": Maldini,
-      "index": 16
-    },  
-    {
-      "name": "Gerd Muller",
-      "nationality": "Germany 🇩🇪",
-      "photo": GerdMuller,
-      "index": 17
-    },
-    {
-      "name": "Roberto Baggio",
-     "nationality": "Italy 🇮🇹",
-      "photo": Baggio,
-      "index": 18
-    },
-    {
-      "name": "Lev Yashin",
-      "nationality": "Russia 🇷🇺",
-      "photo": Yashin,
-      "index": 19
-    },
-    {
-      "name": "Ferenc Puskás",
-      "nationality": "Netherlands 🇳🇱",
-      "photo": Ferenc,
-      "index": 20
-    }
+  {
+    name: "Messi",
+    nationality: "Argentina 🇦🇷",
+    photo: Messi,
+    index: 1
+  },
+  {
+    name: "Cristiano Ronaldo",
+    nationality: "Portugal 🇵🇹",
+    photo: CR7,
+    index: 2
+  },
+  {
+    name: "Pele",
+    nationality: "Brazil 🇧🇷",
+    photo: Pele,
+    index: 3
+  },
+  {
+    name: "Maradona",
+    nationality: "Argentina 🇦🇷",
+    photo: Maradona,
+    index: 4
+  },
+  {
+    name: "Johan Cruyff",
+    nationality: "Netherlands 🇳🇱",
+    photo: JohanCruyff,
+    index: 5
+  },
+  {
+    name: "Zinedine Zidane",
+    nationality: "France 🇫🇷",
+    photo: ZinedineZidane,
+    index: 6
+  },
+  {
+    name: "Alfredo Di Stefano",
+    nationality: "Argentina 🇦🇷",
+    photo: AlfredoDiStefano,
+    index: 7
+  },
+  {
+    name: "Garrincha",
+    nationality: "Brazil 🇧🇷",
+    photo: Garrincha,
+    index: 8
+  },
+  {
+    name: "Ronaldo Nazario",
+    nationality: "Brazil 🇧🇷",
+    photo: R9,
+    index: 9
+  },
+  {
+    name: "Ronaldinho",
+    nationality: "Brazil 🇧🇷",
+    photo: Ronaldinho,
+    index: 10
+  },
+  {
+    name: "Michel Platini",
+    nationality: "France 🇫🇷",
+    photo: Platini,
+    index: 11
+  },
+  {
+    name: "Franz Beckenbauer",
+    nationality: "Germany 🇩🇪",
+    photo: Beckenbauer,
+    index: 12
+  },
+  {
+    name: "George Best",
+    nationality: "Northern Ireland 🇬🇧",
+    photo: GeorgeBest,
+    index: 13
+  },
+  {
+    name: "Andres Iniesta",
+    nationality: "Spain 🇪🇸",
+    photo: Iniesta,
+    index: 14
+  },
+  {
+    name: "Xavi Hernandez",
+    nationality: "Spain 🇪🇸",
+    photo: Xavi,
+    index: 15
+  },
+  {
+    name: "Paolo Maldini",
+    nationality: "Italy 🇮🇹",
+    photo: Maldini,
+    index: 16
+  },  
+  {
+    name: "Gerd Muller",
+    nationality: "Germany 🇩🇪",
+    photo: GerdMuller,
+    index: 17
+  },
+  {
+    name: "Roberto Baggio",
+    nationality: "Italy 🇮🇹",
+    photo: Baggio,
+    index: 18
+  },
+  {
+    name: "Lev Yashin",
+    nationality: "Russia 🇷🇺",
+    photo: Yashin,
+    index: 19
+  },
+  {
+    name: "Ferenc Puskás",
+    nationality: "Netherlands",
+    photo: Ferenc,
+    index: 20
+  }
 ];
