@@ -3,7 +3,7 @@ import Image from 'next/image';
 // images
 import Messi from '/public/legend-images/players/messi.png';
 import CR7 from '/public/legend-images/players/CR7.png';
-import Pele from '/public/legend-images/players/Pele.png';
+import Pele from '/public/legend-images/players/pele.png';
 import Maradona from '/public/legend-images/players/maradona.png';
 import JohanCruyff from '/public/legend-images/players/cruyff.png';
 import ZinedineZidane from '/public/legend-images/players/zidane.png';
