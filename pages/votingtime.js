@@ -43,35 +43,35 @@ const VoteTime = () => {
           <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">Legendary Footballers ⚽</h1>
           <p className="text-xl text-slate-600">Vote for your favourite players!</p>
         </div>
-  
+
         <hr className="my-8 border-slate-200" />
-  
+
         <form className="py-6 bg-white rounded-lg">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
-            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm">
-              <option value="" disabled selected>Select your GOAT</option>
+            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm" defaultValue="">
+              <option value="" disabled>Select your GOAT</option>
               {playerData.map(player => (
                 <option key={player.index} value={player.name}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
-  
+
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
-            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" >
-              <option value="" disabled defaultValue>Select your Honourable mention 🥈</option>
+            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" defaultValue="">
+              <option value="" disabled> Select your Honourable mention 🥈</option>
               {playerData.map(player => (
                 <option key={player.index} value={player.name}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
-  
+
           <button className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700">
             Vote
           </button>
         </form>
-  
+
         <div className="grid gap-10 sm:grid-cols-2">
           {playerData.map((name, index) => (
             <PlayerCard key={index} name={name} />
