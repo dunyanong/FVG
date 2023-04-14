@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
     <div className='flex flex-col min-h-screen bg-white text-black'>      
       <div className='flex justify-center'>
         <Navbar />
-      </div>
-      <main className='flex-grow py-10 md:pt-40 lg:pt-20 px-10'>        
         <ToastContainer limit={1}/>
+      </div>
+      <main className='flex-grow py-10 md:pt-40 lg:pt-20 px-10'>                
         <Component {...pageProps} />
       </main>
       <footer className='mt-auto'>
