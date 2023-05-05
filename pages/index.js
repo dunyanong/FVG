@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import LegendaryPlayers from '../public/legend-images/legends.png';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -23,12 +24,13 @@ export default function Home() {
           </p>
         </div>
         <div className="flex gap-4">
-          <a
-            className="inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-slate-900 text-white hover:bg-slate-700 h-11 px-8 rounded-md"
-            href="auth/Login"
-          >
-            Vote Now
-          </a>
+          <Link href="auth/Login" legacyBehavior>
+            <a
+              className="inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-slate-900 text-white hover:bg-slate-700 h-11 px-8 rounded-md"              
+            >
+              Vote Now
+            </a>
+          </Link>
           <a
             target="_blank"
             rel="noreferrer"

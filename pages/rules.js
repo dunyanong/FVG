@@ -3,6 +3,7 @@ import { FaCheck } from 'react-icons/fa';
 
 import GOAT from '../public/legend-images/goat.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Rules = () => {
     return (
@@ -41,12 +42,13 @@ const Rules = () => {
                 </li>              
               </ul>
               <div className="flex gap-4 pt-10">
+                <Link href="/votingtime" legacyBehavior>
                 <a
-                  className="inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-slate-900 text-white hover:bg-slate-700 h-11 px-8 rounded-md"
-                  href="votingtime"
+                  className="inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-slate-900 text-white hover:bg-slate-700 h-11 px-8 rounded-md"                  
                 >
                   Start!
                 </a>
+                </Link>
               </div>              
             </div>            
           </div>
