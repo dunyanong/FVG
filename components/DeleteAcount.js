@@ -42,7 +42,7 @@ const Danger = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="pt-0">
       {showConfirmSignout && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -57,8 +57,8 @@ const Danger = () => {
               </button>
             </div>
           </div>
-        </div>
-      )}      
+        </div>        
+      )}
       {showConfirmDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -75,26 +75,31 @@ const Danger = () => {
           </div>
         </div>
       )}      
-      <div className="mt-10 mb-5 pt-4 px-4">
-        <h3 className="text-lg font-semibold">Sign Out Account</h3>
-        <p className="text-sm font-normal">Disconnect from your account and return to the login screen.</p>
-        <button
-          className="text-white bg-red-500 py-1 px-4 rounded-lg text-end mt-5"
-          onClick={() => setShowConfirmSignout(true)}
-        >
-          Sign out
-        </button>
+
+      <div className="rounded-lg border bg-card text-card-foreground shadow-sm my-4">
+        <div className="flex flex-col space-y-1.5 p-6">
+          <h3 className="text-lg font-semibold leading-none tracking-tight">Sign Out Account</h3>
+          <p className="text-sm text-muted-foreground">Disconnect from your account and return to the login screen.</p>
+        </div>
+        <div className="flex items-center p-6 pt-0">
+          <button className="inline-flex text-white items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-black text-primary-foreground h-10 py-2 px-4" onClick={() => setShowConfirmSignout(true)}>
+            Sign out
+          </button>
+        </div>
       </div>
 
-      <hr/>
-
-      <div className="py-4 px-4">
-        <h3 className="text-lg font-semibold">Delete Account</h3>
-        <p className="text-sm font-normal">Permanently remove your Personal Account and all of its contents from the Confessay platform. This action is not reversible, so please continue with caution.</p>
-        <button className="text-white bg-red-500 py-1 px-4 rounded-lg text-end mt-5" onClick={() => setShowConfirmDelete(true)}>
-          Terminate Account
-        </button>
+      <div className="rounded-lg border bg-card text-card-foreground shadow-sm my-4">
+        <div className="flex flex-col space-y-1.5 p-6">
+          <h3 className="text-lg font-semibold leading-none tracking-tight">Delete Account</h3>
+          <p className="text-sm text-muted-foreground">Permanently remove your Personal Account and all of its contents from the GoatVote platform. This action is not reversible, so please continue with caution.</p>
+        </div>
+        <div className="flex items-center p-6 pt-0">
+          <button className="inline-flex text-white items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-black text-primary-foreground h-10 py-2 px-4" onClick={() => setShowConfirmDelete(true)}>
+            Delete now
+          </button>
+        </div>
       </div>
+
     </div>
   );
 };

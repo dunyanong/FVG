@@ -7,7 +7,7 @@ const Dashboard = () => {
             <Head>
                 <title>GoatVote</title>
             </Head>
-            <h1 className="text-start font-semibold text-5xl mb-10 md:mb-20 text-black">Setting</h1>
+            <h1 className="text-start font-semibold text-5xl mb-10 md:mb-10 text-black">Setting</h1>
             <DeleteAccount />
         </div>
     );
