@@ -26,7 +26,7 @@ export default function Home() {
             The G.O.A.T Voting 
           </h1>
           <p className="max-w-[42rem] leading-normal text-slate-700 sm:text-xl sm:leading-8">
-            Who's the Greatest of All Time? Vote for your football legends now!
+            Who&#39;s the Greatest of All Time? Vote for your football legends now!
           </p>
         </div>
         <div className="flex gap-4">
