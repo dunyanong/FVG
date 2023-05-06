@@ -19,14 +19,14 @@ export default function Home() {
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
-      <section className="container grid items-center justify-center gap-6 pt-20 pb-8 md:pt-10 md:pb-12 lg:pt-3 lg:pb-10">
+      <section className="md:px-10 lg:px-20 grid items-center justify-center gap-6 pt-20 pb-8 md:pt-10 md:pb-12 lg:pt-3 lg:pb-10">
         <Image src={LegendaryPlayers} width={800} height={450} alt='alt' priority={true}/>
         <div className="flex flex-col items-start gap-4 lg:w-[52rem]">
           <h1 className="text-3xl font-bold leading-[1.1] tracking-tighter sm:text-5xl md:text-6xl">
             The G.O.A.T Voting 
           </h1>
           <p className="max-w-[42rem] leading-normal text-slate-700 sm:text-xl sm:leading-8">
-            G.O.A.T stands for greatest of all time. Is it Messi or Ronaldo?
+            Who&#39;s the Greatest of All Time? Vote for your football legends now!
           </p>
         </div>
         <div className="flex gap-4">
