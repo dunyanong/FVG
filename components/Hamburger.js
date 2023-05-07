@@ -6,9 +6,8 @@ import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 
 const audioFiles = ['/music/Dreamers.wav', '/music/LaLaLa.wav', '/music/WakaWaka.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/WavingFlag.wav'];
 
-export const MobileNav = ({ open, setOpen }) => {
+export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying }) => {
     const [user, loading] = useAuthState(auth);
-    const [isPlaying, setIsPlaying] = useState(false);
     const [audioIndex, setAudioIndex] = useState(0);
     const [audio, setAudio] = useState(null);
   
@@ -33,6 +32,11 @@ export const MobileNav = ({ open, setOpen }) => {
               <a onClick={handleLinkClick}>Home</a>
             </Link>
           </div>
+          <div className="py-4 hover:underline text-sm md:text-base font-semibold">
+            <Link href="/chat" legacyBehavior>
+              <a onClick={handleLinkClick}>Chat</a>
+            </Link>
+          </div>          
           <div className="py-4 hover:underline text-sm md:text-base font-semibold">
             <Link href="/ranking" legacyBehavior>
               <a onClick={handleLinkClick}>Ranking</a>
@@ -107,11 +111,11 @@ export const MobileNav = ({ open, setOpen }) => {
   };
   
 
-export const Hamburger = () => {
+export const Hamburger = ({isPlaying, setIsPlaying}) => {
     const [open, setOpen] = useState(false);
     return (
         <div>
-            <MobileNav open={open} setOpen={setOpen}/>
+            <MobileNav open={open} setOpen={setOpen} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
             <div className="w-11/12 flex justify-end items-center">
                 <div className="group z-50 relative w-6 h-6 cursor-pointer m-0 flex-col justify-between items-center flex" onClick={() => setOpen(!open)}>
                     <span className={`h-1 w-full bg-black  rounded-lg group-hover:text-red-500 cursor-pointer transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-2.5" : ""}`} />
