@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../utils/firebase";
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 
-const audioFiles = ['/music/Dreamers.wav', '/music/LaLaLa.wav', '/music/WakaWaka.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/WavingFlag.wav'];
+const audioFiles = ['/music/Dreamers.wav', '/music/WakaWaka.wav','/music/OnTopOfTheWorld.wav', '/music/Ozuna.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
 
 export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying }) => {
     const [user, loading] = useAuthState(auth);
@@ -13,8 +13,7 @@ export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying }) => {
   
     useEffect(() => {
       setAudio(new Audio(audioFiles[audioIndex]));
-    }, [audioIndex]);    
-  
+    }, [audioIndex]);
     
     const handleLinkClick = () => {
       setOpen(false);
