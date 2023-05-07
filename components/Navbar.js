@@ -28,10 +28,15 @@ const Navbar = () => {
 
     <div className="flex gap-4 justify-center items-center">
             <div className="text-sm">
-            <Link href="/" legacyBehavior>
-                <a className='text-black transition-colors duration-200 hover:text-slate-500'>Home</a>
-            </Link>
+              <Link href="/" legacyBehavior>
+                  <a className='text-black transition-colors duration-200 hover:text-slate-500'>Home</a>
+              </Link>
             </div>
+            <div className="text-sm">
+              <Link href="/chat" legacyBehavior>
+                  <a className='text-black transition-colors duration-200 hover:text-slate-500'>Chat</a>
+              </Link>
+            </div>            
             <div className="text-sm">
               <Link href="/ranking" legacyBehavior>
                 <a className="text-black transition-colors duration-200 hover:text-slate-500">Ranking</a>
@@ -81,10 +86,10 @@ const Navbar = () => {
     <div className="flex justify-between md:mt-3 md:hidden w-full max-w-3xl mx-auto px-5 md:px-10 py-5 items-center hover:cursor">
         <ul className="flex items-center">
             <Link legacyBehavior href="/">
-                <p className="font-bold text-2xl text-black tracking-tighter">GoatVote</p>          
+              <a className="text-black font-mono transition-colors duration-200 hover:text-slate-500">GoatVote</a>    
             </Link>
         </ul>             
-        <Hamburger />
+        <Hamburger isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
     </div>
     {isPlaying && (
         <div className="fixed bottom-0 left-0 right-0 p-2 bg-white flex justify-center">
