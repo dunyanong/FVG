@@ -89,7 +89,7 @@ const Navbar = () => {
               <a className="text-black font-mono transition-colors duration-200 hover:text-slate-500">GoatVote</a>    
             </Link>
         </ul>             
-        <Hamburger isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+        <Hamburger isPlaying={isPlaying} setIsPlaying={setIsPlaying} audioIndex={audioIndex} setAudioIndex={setAudioIndex} setAudio={setAudio}/>
     </div>
     {isPlaying && (
         <div className="fixed bottom-0 left-0 right-0 p-2 bg-white flex justify-center">
