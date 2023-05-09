@@ -128,8 +128,8 @@ const Guestbook = () => {
             <div className="mt-1">
             {messages.map((msg) => (
                 <div key={msg.id} className="mb-4 flex items-center gap-1">
-                <h4>{msg.username}:</h4>
-                <p>{msg.comment}</p>
+                <h4 className="text-xs md:text-sm lg:text-base">{msg.username}:</h4>
+                <p className="text-xs md:text-sm lg:text-base">{msg.comment}</p>
                 </div>
             ))}
             </div>
