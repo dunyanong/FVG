@@ -13,7 +13,6 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.css";
-import { toast, ToastContainer } from "react-toastify";
 import { auth, db } from "../utils/firebase";
 import Head from "next/head";
 
