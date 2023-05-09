@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../utils/firebase";
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 
-const audioFiles = ['/music/Dreamers.wav', '/music/WakaWaka.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
+const audioFiles = ['/music/quick.wav', '/music/WakaWaka.wav', '/music/Dreamers.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
 
 export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying, audioIndex, setAudioIndex, setAudio}) => {
     const [user, loading] = useAuthState(auth);
@@ -89,21 +89,21 @@ export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying, audioIndex, 
           </div>
         </div>
         {isPlaying && (
-        <div className="fixed bottom-0 left-0 right-0 p-2 bg-white flex justify-center">
-          <p className="text-sm font-semibold text-center">Song: {audioFiles[audioIndex].replace(/^\/music\/|\.wav$/g, '')}</p>
-          <audio
-            autoPlay
-            src={audioFiles[audioIndex]}
-            onEnded={() => {
-              if (audioIndex === audioFiles.length - 1) {
-                setAudioIndex(0);
-              } else {
-                setAudioIndex(audioIndex + 1);
-              }
-            }}
-          />         
-        </div>
-      )}   
+          <div className="fixed bottom-0 left-0 right-0 p-2 bg-white flex justify-center">
+            <p className="text-sm font-semibold text-center">Song: {audioFiles[audioIndex].replace(/^\/music\/|\.wav$/g, '')}</p>
+            <audio
+              autoPlay
+              src={audioFiles[audioIndex]}
+              onEnded={() => {
+                if (audioIndex === audioFiles.length - 1) {
+                  setAudioIndex(0);
+                } else {
+                  setAudioIndex(audioIndex + 1);
+                }
+              }}
+            />         
+          </div>
+        )}
       </div>
     );
   };
