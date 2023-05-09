@@ -4,16 +4,15 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../utils/firebase";
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 
-const audioFiles = ['/music/Dreamers.wav', '/music/WakaWaka.wav','/music/OnTopOfTheWorld.wav', '/music/Ozuna.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
+const audioFiles = ['/music/Dreamers.wav', '/music/WakaWaka.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
 
-export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying }) => {
+export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying, audioIndex, setAudioIndex, setAudio}) => {
     const [user, loading] = useAuthState(auth);
-    const [audioIndex, setAudioIndex] = useState(0);
-    const [audio, setAudio] = useState(null);
   
     useEffect(() => {
       setAudio(new Audio(audioFiles[audioIndex]));
-    }, [audioIndex]);
+    }, [audioIndex]);    
+  
     
     const handleLinkClick = () => {
       setOpen(false);
@@ -110,11 +109,11 @@ export const MobileNav = ({ open, setOpen, isPlaying, setIsPlaying }) => {
   };
   
 
-export const Hamburger = ({isPlaying, setIsPlaying}) => {
+export const Hamburger = ({isPlaying, setIsPlaying, audioIndex, setAudioIndex, setAudio}) => {
     const [open, setOpen] = useState(false);
     return (
         <div>
-            <MobileNav open={open} setOpen={setOpen} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+            <MobileNav open={open} setOpen={setOpen} isPlaying={isPlaying} setIsPlaying={setIsPlaying} audioIndex={audioIndex} setAudioIndex={setAudioIndex} setAudio={setAudio}/>
             <div className="w-11/12 flex justify-end items-center">
                 <div className="group z-50 relative w-6 h-6 cursor-pointer m-0 flex-col justify-between items-center flex" onClick={() => setOpen(!open)}>
                     <span className={`h-1 w-full bg-black  rounded-lg group-hover:text-red-500 cursor-pointer transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-2.5" : ""}`} />
