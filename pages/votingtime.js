@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Head from "next/head";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { auth, db } from "../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { playerData } from '../data/data';
@@ -19,8 +19,8 @@ import {
 
 const VoteTime = () => {
   const [user, loading] = useAuthState(auth);
-  const [goatVote, setGoatVote] = useState('');
-  const [honorableMentionVote, setHonorableMentionVote] = useState('');
+  const [goatVote, setGoatVote] = useState(null);
+  const [honorableMentionVote, setHonorableMentionVote] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
 
   useEffect(() => {
@@ -43,9 +43,13 @@ const VoteTime = () => {
     }
     const docRef = doc(db, 'votes', user.uid);
     await setDoc(docRef, {
-      goatVote,
-      honorableMentionVote,
-    });
+      goatVote: goatVote,
+      honorableMentionVote: honorableMentionVote,
+      user: { 
+        name: user.displayName,
+        email: user.email
+      }
+    });    
     // update vote counts for the selected players
     if (goatVote && goatVote.id) {
       const goatRef = doc(db, 'votecounts', goatVote.id);
@@ -85,20 +89,24 @@ const VoteTime = () => {
         <form className="py-6 bg-white rounded-lg">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
-            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm" defaultValue="" onChange={(e) => setGoatVote(e.target.value)}>
+            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm" defaultValue="" onChange={(e) => {
+              setGoatVote(e.target.value)
+            }}>
               <option value="" disabled>Select your GOAT</option>
               {playerData.map(player => (
-                <option key={player.index} value={player}>{player.name} ({player.nationality})</option>
+                <option key={player.legendId} value={player.legendId}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
 
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
-            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" defaultValue="" onChange={(e) => setHonorableMentionVote(e.target.value)}>
+            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" defaultValue="" onChange={(e) => {
+              setHonorableMentionVote(e.target.value)
+            }}>
               <option value="" disabled> Select your Honourable mention 🥈</option>
               {playerData.map(player => (
-                <option key={player.index} value={player}>{player.name} ({player.nationality})</option>
+                <option key={player.legendId} value={player.legendId}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
