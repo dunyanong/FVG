@@ -22,105 +22,105 @@ import Ferenc from '/public/legend-images/players/ferenc-puskás.png'
 
 export const playerData = [
   {
-    legendId: "d5a279",
+    legendId: "Messi94",
     name: "Messi",
     nationality: "Argentina 🇦🇷",
     photo: Messi,
     index: 1
   },
   {
-    legendId: "b2c348",
+    legendId: "CR773",
     name: "Cristiano Ronaldo",
     nationality: "Portugal 🇵🇹",
     photo: CR7,
     index: 2
   },
   {
-    legendId: "e9f45a",
+    legendId: "Pele68",
     name: "Pele",
     nationality: "Brazil 🇧🇷",
     photo: Pele,
     index: 3
   },
   {
-    legendId: "c7b129",
+    legendId: "Mara65",
     name: "Maradona",
     nationality: "Argentina 🇦🇷",
     photo: Maradona,
     index: 4
   },
   {
-    legendId: "f8d67b",
+    legendId: "Joha79",
     name: "Johan Cruyff",
     nationality: "Netherlands 🇳🇱",
     photo: JohanCruyff,
     index: 5
   },
   {
-    legendId: "a1e49f",
+    legendId: "Zida91",
     name: "Zinedine Zidane",
     nationality: "France 🇫🇷",
     photo: ZinedineZidane,
     index: 6
   },
   {
-    legendId: "b7d83c",
+    legendId: "Alfr77",
     name: "Alfredo Di Stefano",
     nationality: "Argentina 🇦🇷",
     photo: AlfredoDiStefano,
     index: 7
   },
   {
-    legendId: "e2f9a7",
+    legendId: "Garr75",
     name: "Garrincha",
     nationality: "Brazil 🇧🇷",
     photo: Garrincha,
     index: 8
   },
   {
-    legendId: "f5e172",
+    legendId: "R9954",
     name: "Ronaldo Nazario",
     nationality: "Brazil 🇧🇷",
     photo: R9,
     index: 9
   },
   {
-    legendId: "c8f2e6",
+    legendId: "Rona9b",
     name: "Ronaldinho",
     nationality: "Brazil 🇧🇷",
     photo: Ronaldinho,
     index: 10
   },
   {
-    legendId: "d1a8e3",
+    legendId: "Mich97",
     name: "Michel Platini",
     nationality: "France 🇫🇷",
     photo: Platini,
     index: 11
   },
   {
-    legendId: "e7d5f1",
+    legendId: "Beck82",
     name: "Franz Beckenbauer",
     nationality: "Germany 🇩🇪",
     photo: Beckenbauer,
     index: 12
   },
   {
-    legendId: "a5b3e7",
+    legendId: "Best23",
     name: "George Best",
     nationality: "Northern Ireland 🇬🇧",
     photo: GeorgeBest,
     index: 13
   },
   {
-    legendId: "f1e5d8",
+    legendId: "Iniesta90",
     name: "Andres Iniesta",
     nationality: "Spain 🇪🇸",
     photo: Iniesta,
     index: 14
   },
   {
-    legendId: "c4a9d5",
+    legendId: "Xavi521",
     name: "Xavi Hernandez",
     nationality: "Spain 🇪🇸",
     photo: Xavi,
