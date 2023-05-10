@@ -5,7 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai';
 import { Hamburger } from './Hamburger';
 
-const audioFiles = ['/music/quick.wav', '/music/WakaWaka.wav', '/music/Dreamers.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
+const audioFiles = ['/music/intro.wav', '/music/Dreamers.wav', '/music/WakaWaka.wav', '/music/Ozuna.wav','/music/OnTopOfTheWorld.wav', '/music/HayyaHayya.wav', '/music/Ramenez.wav', '/music/TheNights.wav', '/music/WeAreOneOleOla.wav', '/music/LaLaLa.wav','/music/WavingFlag.wav'];
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);

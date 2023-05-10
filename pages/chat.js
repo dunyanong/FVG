@@ -127,9 +127,9 @@ const Guestbook = () => {
             {/* Display all messages */}
             <div className="mt-1">
             {messages.map((msg) => (
-                <div key={msg.id} className="mb-4 flex items-center gap-1">
-                <h4 className="text-xs md:text-sm lg:text-base">{msg.username}:</h4>
-                <p className="text-xs md:text-sm lg:text-base">{msg.comment}</p>
+                <div key={msg.id} className="mb-4 text-sm flex gap-1 flex-col md:flex-row md:items-center ">
+                    <h4 className="font-semibold">{msg.username}:</h4>
+                    <p className="">{msg.comment}</p>
                 </div>
             ))}
             </div>

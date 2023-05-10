@@ -1,11 +1,65 @@
 import Image from 'next/image';
 import Head from "next/head";
+import { useState, useEffect } from 'react';
 import { auth, db } from "../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { playerData } from '../data/data';
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+  query,
+  orderBy,
+  limit,
+  onSnapshot,
+  setDoc
+} from "firebase/firestore";
 
 const VoteTime = () => {
-  const [user, loading] = useAuthState(auth);  
+  const [user, loading] = useAuthState(auth);
+  const [goatVote, setGoatVote] = useState('');
+  const [honorableMentionVote, setHonorableMentionVote] = useState('');
+  const [hasVoted, setHasVoted] = useState(false);
+
+  useEffect(() => {
+    if (!user) {
+      return;
+    }
+    const votesRef = doc(db, 'votes', user.uid);
+    const unsubscribe = onSnapshot(votesRef, (doc) => {
+      if (doc.exists()) {
+        setHasVoted(true);
+      }
+    });
+    return unsubscribe;
+  }, [user]);
+
+  const handleVote = async (e) => {
+    e.preventDefault();
+    if (goatVote === '' || honorableMentionVote === '') {
+      return;
+    }
+    const docRef = doc(db, 'votes', user.uid);
+    await setDoc(docRef, {
+      goatVote,
+      honorableMentionVote,
+    });
+    // update vote counts for the selected players
+    if (goatVote && goatVote.id) {
+      const goatRef = doc(db, 'votecounts', goatVote.id);
+      await updateDoc(goatRef, {
+        count: increment(2),
+      });
+    }       
+    if (honorableMentionVote && honorableMentionVote.id) {
+      const hmRef = doc(db, 'votecounts', honorableMentionVote.id);
+      await updateDoc(hmRef, {
+        count: increment(1),
+      });
+    }    
+  };
   
   return (
     <div>
@@ -31,32 +85,32 @@ const VoteTime = () => {
         <form className="py-6 bg-white rounded-lg">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
-            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm" defaultValue="">
+            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm" defaultValue="" onChange={(e) => setGoatVote(e.target.value)}>
               <option value="" disabled>Select your GOAT</option>
               {playerData.map(player => (
-                <option key={player.index} value={player.name}>{player.name} ({player.nationality})</option>
+                <option key={player.index} value={player}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
 
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
-            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" defaultValue="">
+            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" defaultValue="" onChange={(e) => setHonorableMentionVote(e.target.value)}>
               <option value="" disabled> Select your Honourable mention 🥈</option>
               {playerData.map(player => (
-                <option key={player.index} value={player.name}>{player.name} ({player.nationality})</option>
+                <option key={player.index} value={player}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
 
-          <button className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700">
-            Vote
+          <button className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700" onClick={handleVote} disabled={goatVote === '' || honorableMentionVote === '' || hasVoted}>
+            {hasVoted ? 'Done Voting!' : 'Vote'}
           </button>
         </form>
 
         <div className="grid gap-10 sm:grid-cols-2">
-          {playerData.map((name, index) => (
-            <PlayerCard key={index} name={name} />
+          {playerData.map((player) => (
+            <PlayerCard key={player.index} player={player} />
           ))}
         </div>
       </div>
@@ -66,10 +120,10 @@ const VoteTime = () => {
  
 export default VoteTime;
 
-const PlayerCard = ({ name }) => (
+const PlayerCard = ({ player }) => (
   <div className="card">
-    <Image src={name.photo} alt={name.name} />
-    <h2 className="text-2xl font-extrabold">{name.name}</h2>
-    <p className="text-slate-600">{name.nationality}</p>
+    <Image src={player.photo} alt={player.name} />
+    <h2 className="text-2xl font-extrabold">{player.name}</h2>
+    <p className="text-slate-600">{player.nationality}</p>
   </div>
 );
