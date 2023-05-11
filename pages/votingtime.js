@@ -111,10 +111,19 @@ const VoteTime = () => {
               ))}
             </select>
           </div>
-
-          <button className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700" onClick={handleVote} disabled={goatVote === '' || honorableMentionVote === '' || hasVoted}>
-            {hasVoted ? 'Done Voting!' : 'Vote'}
-          </button>
+          {hasVoted ? (
+            <h3 className="text-xl font-medium text-gray-900">
+              You have inserted your vote!
+            </h3>
+          ) : (
+            <button
+              className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700"
+              onClick={handleVote}
+              disabled={goatVote === '' || honorableMentionVote === '' || hasVoted}
+            >
+              Vote
+            </button>
+          )}
         </form>
 
         <div className="grid gap-10 sm:grid-cols-2">
