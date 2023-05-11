@@ -14,7 +14,7 @@ import {
   orderBy,
   limit,
   onSnapshot,
-  setDoc
+  setDoc,
 } from "firebase/firestore";
 
 const VoteTime = () => {
@@ -48,7 +48,8 @@ const VoteTime = () => {
       user: { 
         name: user.displayName,
         email: user.email
-      }
+      },
+      voteTime: serverTimestamp(),
     });    
     // update vote counts for the selected players
     if (goatVote && goatVote.id) {
@@ -94,7 +95,7 @@ const VoteTime = () => {
             }}>
               <option value="" disabled>Select your GOAT</option>
               {playerData.map(player => (
-                <option key={player.legendId} value={player.legendId}>{player.name} ({player.nationality})</option>
+                <option key={player.legendId} value={player.name}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
@@ -106,7 +107,7 @@ const VoteTime = () => {
             }}>
               <option value="" disabled> Select your Honourable mention 🥈</option>
               {playerData.map(player => (
-                <option key={player.legendId} value={player.legendId}>{player.name} ({player.nationality})</option>
+                <option key={player.legendId} value={player.name}>{player.name} ({player.nationality})</option>
               ))}
             </select>
           </div>
