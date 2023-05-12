@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from 'next/dynamic';
 
-import { SiGooglechat, SiYoutubemusic } from 'react-icons/si';
-import { GiVote } from 'react-icons/gi';
+const SiGooglechat = dynamic(() => import('react-icons/si').then((module) => module.SiGooglechat), { ssr: false });
+const SiYoutubemusic = dynamic(() => import('react-icons/si').then((module) => module.SiYoutubemusic), { ssr: false });
+const GiVote = dynamic(() => import('react-icons/gi').then((module) => module.GiVote), { ssr: false });
+const AiFillGithub = dynamic(() => import('react-icons/ai').then((module) => module.AiFillGithub), { ssr: false });
+
 
 import LegendaryPlayers from '../public/legend-images/legends.png';
 import Link from 'next/link';
@@ -63,7 +67,7 @@ export default function Home() {
             <div className="mx-auto grid justify-center gap-4 md:grid-cols-2">
               <div className="relative overflow-hidden rounded-lg border bg-background p-2">
                 <div className="flex flex-col justify-between rounded-md p-6">
-                  <GiVote className="text-2xl md:text-4xl lg:text-6xl mb-2" />
+                  <span className="text-2xl md:text-4xl lg:text-6xl mb-2"><GiVote /></span>
                   <div className="space-y-2">
                     <h3 className="font-bold">Voting</h3>
                     <p className="text-sm text-gray-500">Allows users to vote for their favorite football players, allocating 2 points for the GOAT and 1 point for honorable mention.</p>
@@ -72,7 +76,7 @@ export default function Home() {
               </div>
               <div className="relative overflow-hidden rounded-lg border bg-background p-2">
                 <div className="flex flex-col justify-between rounded-md p-6">
-                  <SiYoutubemusic className="text-2xl md:text-4xl lg:text-6xl mb-2" />
+                  <span className="text-2xl md:text-4xl lg:text-6xl mb-2"><SiYoutubemusic /></span>
                   <div className="space-y-2">
                     <h3 className="font-bold">Background music</h3>
                     <p className="text-sm text-gray-500">Enhances the user experience with enjoyable and immersive music/audio while browsing the app.</p>
@@ -81,7 +85,7 @@ export default function Home() {
               </div>
               <div className="relative overflow-hidden rounded-lg border bg-background p-2">
                 <div className="flex flex-col justify-between rounded-md p-6">
-                  <SiGooglechat className="text-2xl md:text-4xl lg:text-6xl mb-2" />
+                  <span className="text-2xl md:text-4xl lg:text-6xl mb-2"><SiGooglechat /></span>
                   <div className="space-y-2">
                     <h3 className="font-bold">Chat</h3>
                     <p className="text-sm text-gray-500">Enables real-time messaging and user interaction, fostering a sense of community for discussing football, sharing opinions, and engaging in voting-related conversations.</p>
@@ -90,7 +94,7 @@ export default function Home() {
               </div>
               <div className="relative overflow-hidden rounded-lg border bg-background p-2">
                 <div className="flex flex-col justify-between rounded-md p-6">
-                  <SiGooglechat className="text-2xl md:text-4xl lg:text-6xl mb-2" />
+                  <span className="text-2xl md:text-4xl lg:text-6xl mb-2"><AiFillGithub /></span>
                   <div className="space-y-2">
                     <h3 className="font-bold">Open source</h3>
                     <p className="text-sm text-gray-500">Project&#39;s codebase is publicly accessible, promoting transparency, collaboration, and innovation by allowing others to access, modify, and distribute the code.</p>
