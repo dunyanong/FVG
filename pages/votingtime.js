@@ -122,7 +122,7 @@ const VoteTime = () => {
               onClick={handleVote}
               disabled={goatVote === '' || honorableMentionVote === '' || hasVoted}
             >
-              Vote
+              <span>Vote</span>
             </button>
           )}
         </form>
