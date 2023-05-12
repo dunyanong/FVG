@@ -86,46 +86,46 @@ const VoteTime = () => {
           <p className="text-xl text-slate-600">Vote for your favourite players!</p>
         </div>
 
-        <hr className="my-8 border-slate-200" />
-
-        <form className="py-6 bg-white rounded-lg">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
-            <Select
-              options={playerData.map(player => ({
-                value: player.name,
-                label: `${player.name} (${player.nationality})`
-              }))}
-              className="w-1/2 pt-2"
-              onChange={selectedOption => setGoatVote(selectedOption.value)}
-            />
-          </div>
-
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
-            <Select
-              options={playerData.map(player => ({
-                value: player.name,
-                label: `${player.name} (${player.nationality})`
-              }))}
-              className="w-1/2 pt-2"
-              onChange={selectedOption => setHonorableMentionVote(selectedOption.value)}
-            />
-          </div>
-          {hasVoted ? (
-            <h3 className="text-xl font-medium text-gray-900">
+        <hr className="py-8 border-slate-200" />
+        
+        {hasVoted ? (
+            <h3 className="text-xl py-10 font-medium text-gray-900">
               You have inserted your vote!
             </h3>
           ) : (
+            <form className="py-6 bg-white rounded-lg">
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
+              <Select
+                options={playerData.map(player => ({
+                  value: player.name,
+                  label: `${player.name} (${player.nationality})`
+                }))}
+                className="w-1/2 pt-2"
+                onChange={selectedOption => setGoatVote(selectedOption.value)}
+              />
+            </div>
+  
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
+              <Select
+                options={playerData.map(player => ({
+                  value: player.name,
+                  label: `${player.name} (${player.nationality})`
+                }))}
+                className="w-1/2 pt-2"
+                onChange={selectedOption => setHonorableMentionVote(selectedOption.value)}
+              />
+            </div>
             <button
-              className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700"
-              onClick={handleVote}
-              disabled={goatVote === '' || honorableMentionVote === '' || hasVoted}
-            >
-              <span>Vote</span>
-            </button>
+                className="px-4 py-2 text-white bg-black rounded-lg hover:bg-slate-700"
+                onClick={handleVote}
+                disabled={goatVote === '' || honorableMentionVote === '' || hasVoted}
+              >
+                <span>Vote</span>
+              </button>
+          </form>
           )}
-        </form>
 
         <div className="grid gap-10 sm:grid-cols-2">
           {playerData.map((player) => (
