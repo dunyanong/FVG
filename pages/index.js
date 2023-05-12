@@ -93,7 +93,7 @@ export default function Home() {
                   <SiGooglechat className="text-2xl md:text-4xl lg:text-6xl mb-2" />
                   <div className="space-y-2">
                     <h3 className="font-bold">Open source</h3>
-                    <p className="text-sm text-gray-500">Project's codebase is publicly accessible, promoting transparency, collaboration, and innovation by allowing others to access, modify, and distribute the code.</p>
+                    <p className="text-sm text-gray-500">Project&#39;s codebase is publicly accessible, promoting transparency, collaboration, and innovation by allowing others to access, modify, and distribute the code.</p>
                   </div>
                 </div>
               </div>
