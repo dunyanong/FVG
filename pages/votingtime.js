@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Head from "next/head";
 import { useState, useEffect, use } from 'react';
 import { auth, db } from "../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { playerData } from '../data/data';
+import Select from 'react-select';
 import {
   addDoc,
   collection,
@@ -16,6 +16,7 @@ import {
   onSnapshot,
   setDoc,
 } from "firebase/firestore";
+import PlayerCard from '../components/PlayerCard';
 
 const VoteTime = () => {
   const [user, loading] = useAuthState(auth);
@@ -90,26 +91,26 @@ const VoteTime = () => {
         <form className="py-6 bg-white rounded-lg">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
-            <select name="goat" className="block w-full mt-1 rounded-lg border-gray-300 shadow-sm" defaultValue="" onChange={(e) => {
-              setGoatVote(e.target.value)
-            }}>
-              <option value="" disabled>Select your GOAT</option>
-              {playerData.map(player => (
-                <option key={player.legendId} value={player.name}>{player.name} ({player.nationality})</option>
-              ))}
-            </select>
+            <Select
+              options={playerData.map(player => ({
+                value: player.name,
+                label: `${player.name} (${player.nationality})`
+              }))}
+              className="w-1/2 pt-2"
+              onChange={selectedOption => setGoatVote(selectedOption.value)}
+            />
           </div>
 
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
-            <select name="honorable-mention" className="block w-full mt-1 rounded-lg border-gray-black shadow-sm" defaultValue="" onChange={(e) => {
-              setHonorableMentionVote(e.target.value)
-            }}>
-              <option value="" disabled> Select your Honourable mention 🥈</option>
-              {playerData.map(player => (
-                <option key={player.legendId} value={player.name}>{player.name} ({player.nationality})</option>
-              ))}
-            </select>
+            <Select
+              options={playerData.map(player => ({
+                value: player.name,
+                label: `${player.name} (${player.nationality})`
+              }))}
+              className="w-1/2 pt-2"
+              onChange={selectedOption => setHonorableMentionVote(selectedOption.value)}
+            />
           </div>
           {hasVoted ? (
             <h3 className="text-xl font-medium text-gray-900">
@@ -137,11 +138,3 @@ const VoteTime = () => {
 }
  
 export default VoteTime;
-
-const PlayerCard = ({ player }) => (
-  <div className="card">
-    <Image src={player.photo} alt={player.name} />
-    <h2 className="text-2xl font-extrabold">{player.name}</h2>
-    <p className="text-slate-600">{player.nationality}</p>
-  </div>
-);
