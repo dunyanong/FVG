@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       <div className='flex justify-center'>
         <Navbar />
       </div>
-      <main className='flex-grow py-10 md:pt-40 lg:pt-20 px-10'>
+      <main className='flex-grow py-10 md:pt-20 lg:pt-20 px-10'>
         <Component {...pageProps} />
       </main>
       <footer className='mt-auto'>
