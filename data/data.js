@@ -23,140 +23,140 @@ import Ferenc from '/public/legend-images/players/ferenc-puskás.png'
 export const playerData = [
   {
     legendId: "Messi94",
-    name: "Messi",
+    legendName: "Messi",
     nationality: "Argentina 🇦🇷",
     photo: Messi,
     index: 1
   },
   {
     legendId: "CR773",
-    name: "Cristiano Ronaldo",
+    legendName: "Cristiano Ronaldo",
     nationality: "Portugal 🇵🇹",
     photo: CR7,
     index: 2
   },
   {
     legendId: "Pele68",
-    name: "Pele",
+    legendName: "Pele",
     nationality: "Brazil 🇧🇷",
     photo: Pele,
     index: 3
   },
   {
     legendId: "Mara65",
-    name: "Maradona",
+    legendName: "Maradona",
     nationality: "Argentina 🇦🇷",
     photo: Maradona,
     index: 4
   },
   {
     legendId: "Joha79",
-    name: "Johan Cruyff",
+    legendName: "Johan Cruyff",
     nationality: "Netherlands 🇳🇱",
     photo: JohanCruyff,
     index: 5
   },
   {
     legendId: "Zida91",
-    name: "Zinedine Zidane",
+    legendName: "Zinedine Zidane",
     nationality: "France 🇫🇷",
     photo: ZinedineZidane,
     index: 6
   },
   {
     legendId: "Alfr77",
-    name: "Alfredo Di Stefano",
+    legendName: "Alfredo Di Stefano",
     nationality: "Argentina 🇦🇷",
     photo: AlfredoDiStefano,
     index: 7
   },
   {
     legendId: "Garr75",
-    name: "Garrincha",
+    legendName: "Garrincha",
     nationality: "Brazil 🇧🇷",
     photo: Garrincha,
     index: 8
   },
   {
     legendId: "R9954",
-    name: "Ronaldo Nazario",
+    legendName: "Ronaldo Nazario",
     nationality: "Brazil 🇧🇷",
     photo: R9,
     index: 9
   },
   {
     legendId: "Rona9b",
-    name: "Ronaldinho",
+    legendName: "Ronaldinho",
     nationality: "Brazil 🇧🇷",
     photo: Ronaldinho,
     index: 10
   },
   {
     legendId: "Mich97",
-    name: "Michel Platini",
+    legendName: "Michel Platini",
     nationality: "France 🇫🇷",
     photo: Platini,
     index: 11
   },
   {
     legendId: "Beck82",
-    name: "Franz Beckenbauer",
+    legendName: "Franz Beckenbauer",
     nationality: "Germany 🇩🇪",
     photo: Beckenbauer,
     index: 12
   },
   {
     legendId: "Best23",
-    name: "George Best",
+    legendName: "George Best",
     nationality: "Northern Ireland 🇬🇧",
     photo: GeorgeBest,
     index: 13
   },
   {
     legendId: "Iniesta90",
-    name: "Andres Iniesta",
+    legendName: "Andres Iniesta",
     nationality: "Spain 🇪🇸",
     photo: Iniesta,
     index: 14
   },
   {
     legendId: "Xavi521",
-    name: "Xavi Hernandez",
+    legendName: "Xavi Hernandez",
     nationality: "Spain 🇪🇸",
     photo: Xavi,
     index: 15
   },
   {
     legendId:"pmldni16",
-    name: "Paolo Maldini",
+    legendName: "Paolo Maldini",
     nationality: "Italy 🇮🇹",
     photo: Maldini,
     index: 16
   },  
   {
     legendId:"gmllr17",    
-    name: "Gerd Muller",
+    legendName: "Gerd Muller",
     nationality: "Germany 🇩🇪",
     photo: GerdMuller,
     index: 17
   },
   {
     legendId:"rbtbg18",    
-    name: "Roberto Baggio",
+    legendName: "Roberto Baggio",
     nationality: "Italy 🇮🇹",
     photo: Baggio,
     index: 18
   },
   {
     legendId:"lvyshn19",    
-    name: "Lev Yashin",
+    legendName: "Lev Yashin",
     nationality: "Russia 🇷🇺",
     photo: Yashin,
     index: 19
   },
   {
     legendId:"frncsk20",    
-    name: "Ferenc Puskás",
+    legendName: "Ferenc Puskás",
     nationality: "Hungary 🇭🇺",
     photo: Ferenc,
     index: 20
