@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import { auth, db } from "../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { playerData } from '../data/data';
@@ -15,6 +15,7 @@ import {
   limit,
   onSnapshot,
   setDoc,
+  getDoc
 } from "firebase/firestore";
 import PlayerCard from '../components/PlayerCard';
 
@@ -23,6 +24,9 @@ const VoteTime = () => {
   const [goatVote, setGoatVote] = useState(null);
   const [honorableMentionVote, setHonorableMentionVote] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
+
+  let goatVoteCounts = 0;
+  let honorableMentionVoteCounts = 0;
 
   useEffect(() => {
     if (!user) {
@@ -39,34 +43,64 @@ const VoteTime = () => {
 
   const handleVote = async (e) => {
     e.preventDefault();
-    if (goatVote === '' || honorableMentionVote === '') {
+    if (goatVote === null || honorableMentionVote === null) {
       return;
     }
+  
     const docRef = doc(db, 'votes', user.uid);
     await setDoc(docRef, {
       goatVote: goatVote,
       honorableMentionVote: honorableMentionVote,
-      user: { 
-        name: user.displayName,
-        email: user.email
+      user: {
+        email: user.email,
+        name: user.displayName
       },
-      voteTime: serverTimestamp(),
-    });    
-    // update vote counts for the selected players
-    if (goatVote && goatVote.id) {
-      const goatRef = doc(db, 'votecounts', goatVote.id);
-      await updateDoc(goatRef, {
-        count: increment(2),
-      });
-    }       
-    if (honorableMentionVote && honorableMentionVote.id) {
-      const hmRef = doc(db, 'votecounts', honorableMentionVote.id);
-      await updateDoc(hmRef, {
-        count: increment(1),
-      });
-    }    
-  };
+      voteTime: serverTimestamp()
+    });
   
+    // Update vote count for goatVote
+    const goatPlayerRef = doc(db, 'votesCount', goatVote);
+    const goatPlayerDoc = await getDoc(goatPlayerRef);
+  
+    if (goatPlayerDoc.exists()) {
+      const previousCount = goatPlayerDoc.data().totalPoints || 0;
+      goatVoteCounts = goatPlayerDoc.data().goatVoteCounts || 0;
+      
+      let newGoatVoteCounts = goatVoteCounts + 1
+      await updateDoc(goatPlayerRef, {
+        goatVoteCounts: newGoatVoteCounts,
+        totalPoints: previousCount + 2
+      });
+    } else {
+      await setDoc(goatPlayerRef, { 
+        footballplayer: goatVote,
+        goatVoteCounts: 1,        
+        totalPoints: 2
+      });
+    }
+  
+    // Update vote count for honorableMentionVote
+    const honorablePlayerRef = doc(db, 'votesCount', honorableMentionVote);
+    const honorablePlayerDoc = await getDoc(honorablePlayerRef);
+  
+    if (honorablePlayerDoc.exists()) {
+      const previousCount = honorablePlayerDoc.data().totalPoints || 0;
+      honorableMentionVoteCounts = goatPlayerDoc.data().honorableMentionVoteCounts || 0;
+
+      let newHonorableMentionVoteCounts = honorableMentionVoteCounts + 1
+      await updateDoc(honorablePlayerRef, {
+        honorableMentionVoteCounts: newHonorableMentionVoteCounts,
+        totalPoints: previousCount + 1
+      });
+    } else {
+      await setDoc(honorablePlayerRef, {
+        footballplayer: honorableMentionVote,
+        honorableMentionVoteCounts: 1,
+        totalPoints: 1      
+      });
+    }
+  };
+
   return (
     <div>
       <Head>
@@ -98,8 +132,8 @@ const VoteTime = () => {
               <h2 className="text-2xl font-bold text-gray-900">Your GOAT 🐐</h2>
               <Select
                 options={playerData.map(player => ({
-                  value: player.name,
-                  label: `${player.name} (${player.nationality})`
+                  value: player.legendName,
+                  label: `${player.legendName} (${player.nationality})`
                 }))}
                 className="w-1/2 pt-2"
                 onChange={selectedOption => setGoatVote(selectedOption.value)}
@@ -110,8 +144,8 @@ const VoteTime = () => {
               <h2 className="text-2xl font-bold text-gray-900">Your Honourable mention 🏆</h2>
               <Select
                 options={playerData.map(player => ({
-                  value: player.name,
-                  label: `${player.name} (${player.nationality})`
+                  value: player.legendName,
+                  label: `${player.legendName} (${player.nationality})`
                 }))}
                 className="w-1/2 pt-2"
                 onChange={selectedOption => setHonorableMentionVote(selectedOption.value)}

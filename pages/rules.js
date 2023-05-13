@@ -23,7 +23,7 @@ const Rules = () => {
         <div className="container grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-3 lg:pb-10">
 
           <div className="mx-auto flex flex-col items-start gap-4 lg:w-[52rem]">
-            <Image src={GOAT} width={250} height={150} alt='alt'/>
+            <Image src={GOAT} width={250} height={150} alt='goat image'/>
             <h1 className="text-3xl font-bold leading-[1.1] tracking-tighter sm:text-5xl md:text-6xl">
               Voting Time!
             </h1>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="mt-20 bg-white bg-opacity-50 backdrop-blur-lg">
+        <footer className="md:px-20 lg:px-20 pb-8 md:py-0 lg:py-0 h-auto bg-white bg-opacity-50 backdrop-blur-lg">
             <div className="grid grid-cols-2 gap-8 px-6 pt-8  md:grid-cols-4">
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-black uppercase">Pages</h2>
@@ -31,7 +31,7 @@ const Footer = () => {
                     <h2 className="mb-6 text-sm font-semibold text-black uppercase">Others</h2>
                     <ul className="text-gray-500">
                         <li className="mb-4">
-                            <a href="https://github.com/dunyanong/confessay/blob/main/LICENSE" className="hover:underline" target="_blank">Licensing</a>
+                            <a href="https://github.com/dunyanong/GoatVote/blob/main/LICENSE" className="hover:underline" target="_blank">Licensing</a>
                         </li>
                         <li className="mb-4">
                             <a href="https://www.buymeacoffee.com/dunyanong" className="hover:underline" target="_blank">Support us</a>
