@@ -25,9 +25,6 @@ const VoteTime = () => {
   const [honorableMentionVote, setHonorableMentionVote] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
 
-  let goatVoteCounts = 0;
-  let honorableMentionVoteCounts = 0;
-
   useEffect(() => {
     if (!user) {
       return;
@@ -64,7 +61,7 @@ const VoteTime = () => {
   
     if (goatPlayerDoc.exists()) {
       const previousCount = goatPlayerDoc.data().totalPoints || 0;
-      goatVoteCounts = goatPlayerDoc.data().goatVoteCounts || 0;
+      let goatVoteCounts = goatPlayerDoc.data().goatVoteCounts || 0;
       
       let newGoatVoteCounts = goatVoteCounts + 1
       await updateDoc(goatPlayerRef, {
@@ -85,7 +82,7 @@ const VoteTime = () => {
   
     if (honorablePlayerDoc.exists()) {
       const previousCount = honorablePlayerDoc.data().totalPoints || 0;
-      honorableMentionVoteCounts = goatPlayerDoc.data().honorableMentionVoteCounts || 0;
+      let honorableMentionVoteCounts = goatPlayerDoc.data().honorableMentionVoteCounts || 0;
 
       let newHonorableMentionVoteCounts = honorableMentionVoteCounts + 1
       await updateDoc(honorablePlayerRef, {
