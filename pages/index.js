@@ -78,7 +78,7 @@ export default function Home() {
                   <span className="text-2xl md:text-4xl lg:text-6xl mb-2"><SiYoutubemusic /></span>
                   <div className="space-y-2">
                     <h3 className="font-bold">Background music</h3>
-                    <p className="text-sm text-gray-500">Enhances the user experience with enjoyable and immersive music/audio while browsing the app.</p>
+                    <p className="text-sm text-gray-500">Enhances the user experience with enjoyable and immersive music/audio while browsing the platform.</p>
                   </div>
                 </div>
               </div>

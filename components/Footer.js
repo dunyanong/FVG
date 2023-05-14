@@ -8,13 +8,13 @@ const Footer = () => {
                     <h2 className="mb-6 text-sm font-semibold text-black uppercase">Pages</h2>
                     <ul className="text-gray-500">
                         <li className="mb-4">
-                            <Link href="/Frontpage" legacyBehavior>
+                            <Link href="/" legacyBehavior>
                             <a className=" hover:underline">Home</a>
                             </Link>
                         </li>
                         <li className="mb-4">
-                            <Link href="/About" legacyBehavior>
-                            <a className="hover:underline">About</a>
+                            <Link href="/chat" legacyBehavior>
+                            <a className="hover:underline">Chat</a>
                             </Link>
                         </li>
                     </ul>
