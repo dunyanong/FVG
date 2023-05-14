@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { auth, db } from "../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { playerData } from '../data/data';
 import {
   addDoc,
   collection,
@@ -14,7 +13,6 @@ import {
   onSnapshot,
   setDoc,
 } from "firebase/firestore";
-import PlayerCard from '../components/PlayerCard';
 import { useState, useEffect } from 'react';
 import Chart from 'chart.js/auto';
 
@@ -48,7 +46,7 @@ const VoteTime = () => {
         datasets: [{
           label: 'Total Points',
           data: playerData.map((player) => player.totalPoints),
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the colors as needed
+          backgroundColor: 'black', // Adjust the colors as needed
           borderColor: 'rgba(0, 0, 0, 1)',
           borderWidth: 1
         }]
@@ -90,13 +88,15 @@ const VoteTime = () => {
       </Head>
       <div className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
         <div className="flex-1 space-y-4">
-          <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">Ranking</h1>
-          <p className="text-xl text-slate-600">Ranking description</p>
+          <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">Ranking 📈</h1>
+          <p className="text-xl text-slate-600">Here, you can explore the final rankings of the greatest football players of all time as voted by our audience.</p>
         </div>
 
         <hr className="py-8 border-slate-200" />
         
-        <canvas id="chart" className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10"></canvas>
+        <div className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
+          <canvas id="chart"></canvas>
+        </div>
 
       </div>
     </div>
