@@ -59,9 +59,9 @@ const VoteTime = () => {
     const goatPlayerRef = doc(db, 'votesCount', goatVote);
     const goatPlayerDoc = await getDoc(goatPlayerRef);
   
-    if (goatPlayerDoc.exists()) {
-      const previousCount = goatPlayerDoc.data().totalPoints || 0;
-      let goatVoteCounts = goatPlayerDoc.data().goatVoteCounts || 0;
+    if (goatPlayerDoc.exists() && goatPlayerDoc) {
+      let previousCount = goatPlayerDoc.data()?.totalPoints || 0;
+      let goatVoteCounts = goatPlayerDoc.data()?.goatVoteCounts || 0;
       
       let newGoatVoteCounts = goatVoteCounts + 1
       await updateDoc(goatPlayerRef, {
@@ -80,9 +80,9 @@ const VoteTime = () => {
     const honorablePlayerRef = doc(db, 'votesCount', honorableMentionVote);
     const honorablePlayerDoc = await getDoc(honorablePlayerRef);
   
-    if (honorablePlayerDoc.exists()) {
-      const previousCount = honorablePlayerDoc.data().totalPoints || 0;
-      let honorableMentionVoteCounts = goatPlayerDoc.data().honorableMentionVoteCounts || 0;
+    if (honorablePlayerDoc.exists() && goatPlayerDoc) {
+      let previousCount = honorablePlayerDoc.data()?.totalPoints || 0;
+      let honorableMentionVoteCounts = goatPlayerDoc.data()?.honorableMentionVoteCounts || 0;
 
       let newHonorableMentionVoteCounts = honorableMentionVoteCounts + 1
       await updateDoc(honorablePlayerRef, {
