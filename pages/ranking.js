@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useState, useEffect } from 'react';
 import { auth, db } from "../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { playerData } from '../data/data';
@@ -16,9 +15,65 @@ import {
   setDoc,
 } from "firebase/firestore";
 import PlayerCard from '../components/PlayerCard';
+import { useState, useEffect } from 'react';
+import Chart from 'chart.js/auto';
+
 
 const VoteTime = () => {
   const [user, loading] = useAuthState(auth);
+  const [playerData, setPlayerData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const playersRef = collection(db, 'legendPoints');
+      const playersQuery = query(playersRef, orderBy('totalPoints', 'desc'), limit(5)); // Adjust the limit as needed
+      const unsubscribe = onSnapshot(playersQuery, (snapshot) => {
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setPlayerData(data);
+      });
+
+      return () => unsubscribe();
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (playerData.length > 0) {
+      const chartData = {
+        labels: playerData.map((player) => player.footballplayer),
+        datasets: [{
+          label: 'Total Points',
+          data: playerData.map((player) => player.totalPoints),
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust the colors as needed
+          borderColor: 'rgba(0, 0, 0, 1)',
+          borderWidth: 1
+        }]
+      };
+
+      const chartOptions = {
+        scales: {
+          x: {
+            beginAtZero: true,
+            max: Math.max(...playerData.map((player) => player.totalPoints)) + 10, // Adjust the maximum value as needed
+            ticks: {
+              precision: 0
+            }
+          }
+        }
+      };
+
+      const ctx = document.getElementById('chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: chartOptions
+      });
+    }
+  }, [playerData]);
   
   return (
     <div>
@@ -33,7 +88,7 @@ const VoteTime = () => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <div className="container grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
+      <div className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">Ranking</h1>
           <p className="text-xl text-slate-600">Ranking description</p>
@@ -41,8 +96,7 @@ const VoteTime = () => {
 
         <hr className="py-8 border-slate-200" />
         
-
-
+        <canvas id="chart" className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10"></canvas>
 
       </div>
     </div>
