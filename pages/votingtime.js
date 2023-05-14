@@ -25,6 +25,78 @@ const VoteTime = () => {
   const [honorableMentionVote, setHonorableMentionVote] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
 
+  const handleVote = async (e) => {
+    // Prevent reload
+    e.preventDefault();
+    if (goatVote === null || honorableMentionVote === null) {
+      return;
+    }
+
+    // Tracks user's votes
+    const docRef = doc(db, 'votes', user.uid);
+    await setDoc(docRef, {
+      goatVote: goatVote,
+      honorableMentionVote: honorableMentionVote,
+      user: {
+        email: user.email,
+        name: user.displayName
+      },
+      voteTime: serverTimestamp()
+    });
+  
+// Update vote count for goatVote
+const goatPlayerRef = doc(db, 'votesCount', goatVote);
+const goatPlayerDoc = await getDoc(goatPlayerRef);
+
+if (goatPlayerDoc.exists() && goatPlayerDoc) {
+  let previousCount = goatPlayerDoc.data().totalPoints;
+  let goatVoteCounts = goatPlayerDoc.data().goatVoteCounts;
+
+  if (typeof previousCount === 'number' && typeof goatVoteCounts === 'number') {
+    const newGoatVoteCounts = goatVoteCounts + 1;
+    await updateDoc(goatPlayerRef, {
+      goatVoteCounts: newGoatVoteCounts,
+      totalPoints: previousCount + 2
+    });
+  } else {
+    console.error("Invalid vote count fields for goatVote");
+    setHasVoted(false)
+  }
+} else {
+  await setDoc(goatPlayerRef, {
+    footballplayer: goatVote,
+    goatVoteCounts: 1,
+    totalPoints: 2
+  });
+}
+
+  // Update vote count for honorableMentionVote
+  const honorablePlayerRef = doc(db, 'votesCount', honorableMentionVote);
+  const honorablePlayerDoc = await getDoc(honorablePlayerRef);
+
+  if (honorablePlayerDoc.exists() && honorablePlayerDoc) {
+    let previousCount = honorablePlayerDoc.data().totalPoints;
+    let honorableMentionVoteCounts = honorablePlayerDoc.data().honorableMentionVoteCounts;
+
+    if (typeof previousCount === 'number' && typeof honorableMentionVoteCounts === 'number') {
+      const newHonorableMentionVoteCounts = honorableMentionVoteCounts + 1;
+      await updateDoc(honorablePlayerRef, {
+        honorableMentionVoteCounts: newHonorableMentionVoteCounts,
+        totalPoints: previousCount + 1
+      });
+    } else {
+      console.error("Invalid vote count fields for honorableMentionVote");
+      setHasVoted(false)
+    }
+  } else {
+    await setDoc(honorablePlayerRef, {
+      footballplayer: honorableMentionVote,
+      honorableMentionVoteCounts: 1,
+      totalPoints: 1
+    });
+  }
+  };
+
   useEffect(() => {
     if (!user) {
       return;
@@ -37,66 +109,6 @@ const VoteTime = () => {
     });
     return unsubscribe;
   }, [user]);
-
-  const handleVote = async (e) => {
-    e.preventDefault();
-    if (goatVote === null || honorableMentionVote === null) {
-      return;
-    }
-  
-    const docRef = doc(db, 'votes', user.uid);
-    await setDoc(docRef, {
-      goatVote: goatVote,
-      honorableMentionVote: honorableMentionVote,
-      user: {
-        email: user.email,
-        name: user.displayName
-      },
-      voteTime: serverTimestamp()
-    });
-  
-    // Update vote count for goatVote
-    const goatPlayerRef = doc(db, 'votesCount', goatVote);
-    const goatPlayerDoc = await getDoc(goatPlayerRef);
-  
-    if (goatPlayerDoc.exists() && goatPlayerDoc) {
-      let previousCount = goatPlayerDoc.data()?.totalPoints || 0;
-      let goatVoteCounts = goatPlayerDoc.data()?.goatVoteCounts || 0;
-      
-      let newGoatVoteCounts = goatVoteCounts + 1
-      await updateDoc(goatPlayerRef, {
-        goatVoteCounts: newGoatVoteCounts,
-        totalPoints: previousCount + 2
-      });
-    } else {
-      await setDoc(goatPlayerRef, { 
-        footballplayer: goatVote,
-        goatVoteCounts: 1,        
-        totalPoints: 2
-      });
-    }
-  
-    // Update vote count for honorableMentionVote
-    const honorablePlayerRef = doc(db, 'votesCount', honorableMentionVote);
-    const honorablePlayerDoc = await getDoc(honorablePlayerRef);
-  
-    if (honorablePlayerDoc.exists() && goatPlayerDoc) {
-      let previousCount = honorablePlayerDoc.data()?.totalPoints || 0;
-      let honorableMentionVoteCounts = goatPlayerDoc.data()?.honorableMentionVoteCounts || 0;
-
-      let newHonorableMentionVoteCounts = honorableMentionVoteCounts + 1
-      await updateDoc(honorablePlayerRef, {
-        honorableMentionVoteCounts: newHonorableMentionVoteCounts,
-        totalPoints: previousCount + 1
-      });
-    } else {
-      await setDoc(honorablePlayerRef, {
-        footballplayer: honorableMentionVote,
-        honorableMentionVoteCounts: 1,
-        totalPoints: 1      
-      });
-    }
-  };
 
   return (
     <div>
