@@ -56,7 +56,7 @@ const VoteTime = () => {
     });
   
     // Update vote count for goatVote
-    const goatPlayerRef = doc(db, 'votesCount', goatVote);
+    const goatPlayerRef = doc(db, 'legendPoints', goatVote);
     const goatPlayerDoc = await getDoc(goatPlayerRef);
   
     if (goatPlayerDoc.exists() && goatPlayerDoc) {
@@ -73,7 +73,7 @@ const VoteTime = () => {
     }
   
     // Update vote count for honorableMentionVote
-    const honorablePlayerRef = doc(db, 'votesCount', honorableMentionVote);
+    const honorablePlayerRef = doc(db, 'legendPoints', honorableMentionVote);
     const honorablePlayerDoc = await getDoc(honorablePlayerRef);
   
     if (honorablePlayerDoc.exists() && goatPlayerDoc) {
@@ -103,7 +103,7 @@ const VoteTime = () => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <div className="container grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
+      <div className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">Legendary Footballers ⚽</h1>
           <p className="text-xl text-slate-600">Vote for your favourite players!</p>
