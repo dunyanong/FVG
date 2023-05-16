@@ -36,13 +36,19 @@ const Navbar = () => {
               <Link href="/chat" legacyBehavior>
                   <a className='text-black transition-colors duration-200 hover:text-slate-500'>Chat</a>
               </Link>
-            </div>            
+            </div>
+            {user && (
+              <div className="text-sm">
+                <Link href="/ranking" legacyBehavior>
+                  <a className="text-black transition-colors duration-200 hover:text-slate-500">Ranking</a>
+                </Link>
+              </div>
+            )} 
             <div className="text-sm">
-              <Link href="/ranking" legacyBehavior>
+              <Link href="/auth/Login" legacyBehavior>
                 <a className="text-black transition-colors duration-200 hover:text-slate-500">Ranking</a>
               </Link>
             </div>
-
             <div className="flex items-center gap-10">
             {!user && (
               <div className="flex items-center gap-6">
