@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { db } from "../utils/firebase";
+import { auth, db } from "../utils/firebase";
 import {
   addDoc,
   collection,
@@ -14,10 +14,12 @@ import {
 } from "firebase/firestore";
 import { useState, useEffect } from 'react';
 import Chart from 'chart.js/auto';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 
 const VoteTime = () => {
   const [playerData, setPlayerData] = useState([]);
+  const [user, loading] = useAuthState(auth)
 
   useEffect(() => {
     const fetchData = async () => {
