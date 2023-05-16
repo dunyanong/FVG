@@ -1,24 +1,24 @@
 // images
-import Messi from '/public/legend-images/players/messi.png';
-import CR7 from '/public/legend-images/players/CR7.png';
-import Pele from '/public/legend-images/players/pele.png';
-import Maradona from '/public/legend-images/players/maradona.png';
-import JohanCruyff from '/public/legend-images/players/cruyff.png';
-import ZinedineZidane from '/public/legend-images/players/zidane.png';
-import AlfredoDiStefano from '/public/legend-images/players/alfredo-di-stéfano.png';
-import Garrincha from '/public/legend-images/players/garrincha.png';
-import R9 from '/public/legend-images/players/R9.png';
-import Ronaldinho from '/public/legend-images/players/ronaldinho.png';
-import Platini from '/public/legend-images/players/platini.png'
-import Beckenbauer from '/public/legend-images/players/beckenbauer.png';
-import GeorgeBest from '/public/legend-images/players/george-best.png';
-import Iniesta from '/public/legend-images/players/iniesta.png';
-import Xavi from '/public/legend-images/players/xavi.png';
-import Maldini from '/public/legend-images/players/maldini.png';
-import GerdMuller from '../public/legend-images/players/gerd-muller.png';
-import Baggio from '/public/legend-images/players/baggio.png';
-import Yashin from '/public/legend-images/players/yashin.png';
-import Ferenc from '/public/legend-images/players/ferenc-puskás.png'
+import Messi from '/public/legend-images/players/messi.jpg';
+import CR7 from '/public/legend-images/players/CR7.jpg';
+import Pele from '/public/legend-images/players/pele.jpg';
+import Maradona from '/public/legend-images/players/maradona.jpg';
+import JohanCruyff from '/public/legend-images/players/cruyff.jpg';
+import ZinedineZidane from '/public/legend-images/players/zidane.jpg';
+import AlfredoDiStefano from '/public/legend-images/players/alfredo-di-stéfano.jpg';
+import Garrincha from '/public/legend-images/players/garrincha.jpg';
+import R9 from '/public/legend-images/players/R9.jpg';
+import Ronaldinho from '/public/legend-images/players/ronaldinho.jpg';
+import Platini from '/public/legend-images/players/platini.jpg'
+import Beckenbauer from '/public/legend-images/players/beckenbauer.jpg';
+import GeorgeBest from '/public/legend-images/players/george-best.jpg';
+import Iniesta from '/public/legend-images/players/iniesta.jpg';
+import Xavi from '/public/legend-images/players/xavi.jpg';
+import Maldini from '/public/legend-images/players/maldini.jpg';
+import GerdMuller from '../public/legend-images/players/gerd-muller.jpg';
+import Baggio from '/public/legend-images/players/baggio.jpg';
+import Yashin from '/public/legend-images/players/yashin.jpg';
+import Ferenc from '/public/legend-images/players/ferenc-puskás.jpg'
 
 export const playerData = [
   {

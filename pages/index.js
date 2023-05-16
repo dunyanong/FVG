@@ -7,7 +7,7 @@ const SiYoutubemusic = dynamic(() => import('react-icons/si').then((module) => m
 const GiVote = dynamic(() => import('react-icons/gi').then((module) => module.GiVote), { ssr: false });
 const AiFillGithub = dynamic(() => import('react-icons/ai').then((module) => module.AiFillGithub), { ssr: false });
 
-import LegendaryPlayers from '../public/legend-images/legends.png';
+import LegendaryPlayers from '../public/legend-images/legends.jpg';
 import Link from 'next/link';
 
 export default function Home() {
