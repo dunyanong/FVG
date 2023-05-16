@@ -26,45 +26,45 @@ export const MobileNav = ({ open, setOpen}) => {
           open ? "-translate-y-0" : "-translate-y-full"
         } transition-transform duration-300 ease-in-out filter z-50`}
       >
-        <div className="flex flex-col justify-center items-center mt-28">
-          <div className="py-4 hover:underline text-sm md:text-base font-semibold">
+        <div className="flex flex-col justify-center items-center mt-28 no-underline md:underline">
+          <div className="py-4 text-sm md:text-base font-semibold">
             <Link href="/" legacyBehavior>
               <a onClick={handleLinkClick}>Home</a>
             </Link>
           </div>
-          <div className="py-4 hover:underline text-sm md:text-base font-semibold">
+          <div className="py-4 text-sm md:text-base font-semibold">
             <Link href="/chat" legacyBehavior>
               <a onClick={handleLinkClick}>Chat</a>
             </Link>
           </div>          
-          <div className="py-4 hover:underline text-sm md:text-base font-semibold">
+          <div className="py-4 text-sm md:text-base font-semibold">
             <Link href="/ranking" legacyBehavior>
               <a onClick={handleLinkClick}>Ranking</a>
             </Link>
           </div>
   
-          <div className="hover:underline text-sm py-4">
+          <div className="text-sm">
           {!user && (
               <div className="flex flex-col justify-center items-center">
                 <button
-                  className="text-black text-sm transition-colors duration-200 hover:text-slate-500 flex items-center gap-1"
+                  className="text-black text-sm transition-colors duration-200 hover:text-slate-500 flex items-center gap-1 py-4"
                   onClick={() => setIsPlaying(!isPlaying)}
                 >
-                    <span className="text-lg">
+                    <span className="text-sm">
                         {isPlaying ? <p>Pause</p> : <p>Play</p>}
                     </span>
                     
-                    <span className="text-lg">
+                    <span className="text-sm">
                         {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
                     </span>
                 </button>              
                 <Link href="/auth/Login" legacyBehavior>
-                  <a className="py-4 font-semibold">Join Now</a>
+                  <a className="py-4 font-semibold" onClick={handleLinkClick}>Join Now</a>
                 </Link>
               </div>
             )}
             {user && (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 py-4">
                 <button
                   className="text-black text-sm transition-colors duration-200 hover:text-slate-500 flex items-center gap-1"
                   onClick={() => setIsPlaying(!isPlaying)}
@@ -80,7 +80,7 @@ export const MobileNav = ({ open, setOpen}) => {
               </div>
             )}
           </div>
-          <div className="py-4 hover:underline text-sm md:text-base font-semibold ">
+          <div className="py-4 text-sm md:text-base font-semibold">
             {user && (
               <div className="flex items-center gap-4">
                 <Link href="/dashboard" legacyBehavior>
