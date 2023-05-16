@@ -18,6 +18,7 @@ import {
   getDoc
 } from "firebase/firestore";
 import PlayerCard from '../components/PlayerCard';
+import Link from "next/link";
 
 const VoteTime = () => {
   const [user, loading] = useAuthState(auth);
@@ -152,7 +153,9 @@ const VoteTime = () => {
 
         <div className="grid gap-10 sm:grid-cols-2">
           {playerData.map((player) => (
-            <PlayerCard key={player.index} player={player} />
+            <Link key={player.legendId} href={{ pathname: `/${player.legendId}`, query: { ...player } }}>
+              <PlayerCard key={player.legendId} player={player} />            
+            </Link>
           ))}
         </div>
       </div>
