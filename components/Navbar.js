@@ -50,9 +50,13 @@ const Navbar = () => {
                   className="text-black text-sm transition-colors duration-200 hover:text-slate-500 flex items-center gap-1"
                   onClick={() => setIsPlaying(!isPlaying)}
                 >
-                  music<span className="text-lg">
-                    {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
-                  </span>
+                    <span className="text-sm">
+                        {isPlaying ? <p>Pause</p> : <p>Play</p>}
+                    </span>
+                    
+                    <span className="text-sm">
+                        {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
+                    </span>
                 </button>              
                 <Link href="/auth/Login" legacyBehavior>
                   <a className="text-black text-sm transition-colors duration-200 hover:text-slate-500">Join Now</a>

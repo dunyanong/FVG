@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { auth, db } from "../utils/firebase";
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { db } from "../utils/firebase";
 import {
   addDoc,
   collection,
@@ -18,7 +17,6 @@ import Chart from 'chart.js/auto';
 
 
 const VoteTime = () => {
-  const [user, loading] = useAuthState(auth);
   const [playerData, setPlayerData] = useState([]);
 
   useEffect(() => {
