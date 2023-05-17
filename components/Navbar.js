@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className="hidden items-center md:visible md:flex md:justify-between px-10 py-2">
     <div className="hover:cursor">
       <Link href="/" legacyBehavior>
-          <a className="text-black font-mono transition-colors duration-200 hover:text-slate-500">GoatVote</a>
+          <a className="text-black font-mono transition-colors duration-200 hover:text-slate-500">FVG</a>
       </Link>
     </div>
 
@@ -93,7 +93,7 @@ const Navbar = () => {
     <div className="flex justify-between md:mt-3 md:hidden w-full max-w-3xl mx-auto px-5 md:px-10 py-5 items-center hover:cursor">
         <ul className="flex items-center">
             <Link legacyBehavior href="/">
-              <a className="text-black font-mono transition-colors duration-200 hover:text-slate-500">GoatVote</a>    
+              <a className="text-black font-mono transition-colors duration-200 hover:text-slate-500">FVG</a>    
             </Link>
         </ul>             
         <Hamburger />
