@@ -1,4 +1,4 @@
-# GFVG
+# FVG
 ![FVG photo](https://github.com/dunyanong/GoatVote/assets/97597966/ea6a4ac5-f16a-474c-9a5f-0afd1c189088)
 
 FVG is a web application built using Next.js, React (with TypeScript), Firebase, and Tailwind CSS. It allows users to vote for their favorite football players (GOAT) and provides a platform for the audience to participate in the voting process. Each user can vote for two players: one as the GOAT and the other as an honorable mention.
