@@ -91,7 +91,7 @@ const Danger = () => {
       <div className="rounded-lg border bg-card text-card-foreground shadow-sm my-4">
         <div className="flex flex-col space-y-1.5 p-6">
           <h3 className="text-lg font-semibold leading-none tracking-tight">Delete Account</h3>
-          <p className="text-sm text-muted-foreground">Permanently remove your Personal Account and all of its contents from the GoatVote platform. This action is not reversible, so please continue with caution.</p>
+          <p className="text-sm text-muted-foreground">Permanently remove your Personal Account and all of its contents from the FVG platform. This action is not reversible, so please continue with caution.</p>
         </div>
         <div className="flex items-center p-6 pt-0">
           <button className="inline-flex text-white items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-black text-primary-foreground h-10 py-2 px-4" onClick={() => setShowConfirmDelete(true)}>

@@ -64,11 +64,11 @@ Contributions to FVG are welcome! If you encounter any bugs, issues, or have sug
 
 ## License
 
-GoatVote is released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to modify and distribute the codebase as per the terms of the license.
+FVG is released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to modify and distribute the codebase as per the terms of the license.
 
 ## Acknowledgements
 
-GoatVote utilizes the following technologies and libraries:
+FVG utilizes the following technologies and libraries:
 
 - Next.js: [https://nextjs.org/](https://nextjs.org/)
 - React: [https://reactjs.org/](https://reactjs.org/)
