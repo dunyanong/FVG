@@ -24,7 +24,7 @@ const VoteTime = () => {
   useEffect(() => {
     const fetchData = async () => {
       const playersRef = collection(db, 'legendPoints');
-      const playersQuery = query(playersRef, orderBy('totalPoints', 'desc'), limit(5)); // Adjust the limit as needed
+      const playersQuery = query(playersRef, orderBy('totalPoints', 'desc'), limit(6)); // Adjust the limit as needed
       const unsubscribe = onSnapshot(playersQuery, (snapshot) => {
         const data = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -53,16 +53,36 @@ const VoteTime = () => {
       };
 
       const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             beginAtZero: true,
-            max: Math.max(...playerData.map((player) => player.totalPoints)) + 10, // Adjust the maximum value as needed
+            max: Math.max(...playerData.map((player) => player.totalPoints)) + 10,
             ticks: {
               precision: 0
             }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              precision: 0,
+              maxTicksLimit: 20,
+            },
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        datasets: {
+          bar: {
+            barPercentage: 0.8, // Increase this value to make the bars taller
+            categoryPercentage: 1.0 // Increase this value to make the bars taller
           }
         }
-      };
+      };          
 
       const ctx = document.getElementById('chart').getContext('2d');
       new Chart(ctx, {
