@@ -1,7 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { playerData } from '../../data/data';
+import { useRouter } from 'next/router';
 
-const IndividualFootballer = ({ post }) => {
+const IndividualFootballer = () => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return (
     <div>
       <Head>
         <title>FVG</title>
@@ -16,9 +22,10 @@ const IndividualFootballer = ({ post }) => {
       </Head>
       
       <div className='md:px-20 lg:px-20 pb-8 md:py-0 lg:py-0 h-auto'>
-        <p>Hello</p>
+        <p className='text-3xl text-black'>{id}</p>
       </div> 
     </div>
+  )
 }
 
 export default IndividualFootballer;

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { useState, useEffect } from 'react';
-import { auth, db } from "../utils/firebase";
+import { auth, db } from "../../utils/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { playerData } from '../data/data';
+import { playerData } from '../../data/data';
 import Select from 'react-select';
 import {
   addDoc,
@@ -17,7 +17,7 @@ import {
   setDoc,
   getDoc
 } from "firebase/firestore";
-import PlayerCard from '../components/PlayerCard';
+import PlayerCard from '../../components/PlayerCard';
 import Link from "next/link";
 
 const VoteTime = () => {
@@ -153,7 +153,7 @@ const VoteTime = () => {
 
         <div className="grid gap-10 sm:grid-cols-2">
           {playerData.map((player) => (
-            <Link key={player.legendId} href={{ pathname: `/${player.legendId}`, query: { ...player } }}>
+            <Link key={player.legendId} href={{ pathname: `votingtime/${player.legendId}` }}>
               <PlayerCard key={player.legendId} player={player} />            
             </Link>
           ))}
