@@ -59,7 +59,7 @@ export const playerData = [
     },
     description: {
       notableMoments: "Cristiano Ronaldo is known for his athleticism, goal-scoring ability, and aerial prowess. Some of his notable moments include his incredible bicycle kick goal against Juventus, his last-minute header in the UEFA Euro 2016 final, and his numerous hat-tricks in various competitions.",
-      teamsPlayed: "Ronaldo has played for several top clubs, including Sporting CP, Manchester United, Real Madrid, and Juventus. He has achieved great success and won numerous titles with these clubs.",
+      teamsPlayed: "Ronaldo has played for several top clubs, including Sporting CP, Manchester United, Real Madrid, Juventus and Al assr. He has achieved great success and won numerous titles with these clubs.",
       craziestRecords: "Ronaldo holds several records, including being the all-time top scorer in the UEFA Champions League, the most goals scored in a single European club season (17), and the most goals scored in international competitions (World Cup and European Championship combined).",
       playingStyle: "Ronaldo is known for his speed, power, and versatility. He can play as a forward or on the wings, and his ability to score from long range and in the air makes him a constant threat to opposition defenses.",
       whyFamous: "Cristiano Ronaldo is famous for his remarkable goal-scoring ability, his charismatic personality, and his rivalry with Lionel Messi. He is considered one of the greatest footballers of all time and has a massive global following.",
@@ -222,10 +222,12 @@ export const playerData = [
     nationality: "France 🇫🇷",
     photo: Platini,
     index: 11,
-    BallonDor: 3,
-    SerieA: 2,
-    LigueA: 7,
-    Euro: 1,
+    trophies: {
+      BallonDor: 3,
+      SerieA: 2,
+      LigueA: 7,
+      Euro: 1
+    },
     description: {
       notableMoments: "Michel Platini had a remarkable career that included leading France to victory in the 1984 UEFA European Championship, where he was the tournament's top scorer. He was known for his vision, technical ability, and ability to score goals from midfield.",
       teamsPlayed: "Platini played for clubs like Nancy, Saint-Étienne, and Juventus. He achieved great success with Juventus, winning multiple Serie A titles and reaching the UEFA Champions League final.",
@@ -239,10 +241,12 @@ export const playerData = [
     nationality: "Germany 🇩🇪",
     photo: Beckenbauer,
     index: 12,
-    BallonDor: 2,
-    ChampionsLeague: 3,
-    WorldCup: 1,
-    Bundesliga: 5,
+    trophies: {
+      BallonDor: 2,
+      ChampionsLeague: 3,
+      WorldCup: 1,
+      Bundesliga: 5
+    },
     description: {
       notableMoments: "Franz Beckenbauer is known for his exceptional leadership and versatility on the field. He captained West Germany to victory in the 1974 FIFA World Cup as both a player and a coach, earning him the nickname 'Der Kaiser.'",
       teamsPlayed: "Beckenbauer played for Bayern Munich and New York Cosmos. He achieved great success with Bayern Munich, winning multiple Bundesliga titles and the UEFA Champions League.",
@@ -256,7 +260,9 @@ export const playerData = [
     nationality: "Northern Ireland 🇬🇧",
     photo: GeorgeBest,
     index: 13,
-    BallonDor: 1,
+    trophies: {
+      BallonDor: 1
+    },
     description: {
       notableMoments: "George Best was a talented and flamboyant winger who played for Manchester United during the 1960s and 1970s. He was known for his exceptional dribbling skills, agility, and goal-scoring ability.",
       teamsPlayed: "Best spent the majority of his career at Manchester United, where he achieved great success and won several domestic titles.",
@@ -270,10 +276,12 @@ export const playerData = [
     nationality: "Spain 🇪🇸",
     photo: Iniesta,
     index: 14,
-    ChampionsLeague: 4,
-    WorldCup: 1,
-    LaLiga: 9,
-    Euro: 2,
+    trophies: {
+      ChampionsLeague: 4,
+      WorldCup: 1,
+      LaLiga: 9,
+      Euro: 2
+    },
     description: {
       notableMoments: "Andres Iniesta is widely known for his memorable winning goal in the final of the 2010 FIFA World Cup, which secured Spain's first-ever World Cup triumph. He played a crucial role in Spain's golden era, winning multiple titles with both the national team and Barcelona.",
       teamsPlayed: "Iniesta spent the majority of his career at Barcelona, where he achieved tremendous success, winning numerous domestic and international titles.",
@@ -287,10 +295,12 @@ export const playerData = [
     nationality: "Spain 🇪🇸",
     photo: Xavi,
     index: 15,
-    ChampionsLeague: 4,
-    WorldCup: 1,
-    LaLiga: 8,
-    Euro: 2,
+    trophies: {
+      ChampionsLeague: 4,
+      WorldCup: 1,
+      LaLiga: 8,
+      Euro: 2
+    },
     description: {
       notableMoments: "Xavi Hernandez was the maestro of Barcelona's midfield during their golden era under Pep Guardiola. He played a key role in Spain's success, winning the 2010 World Cup and the European Championships in 2008 and 2012.",
       teamsPlayed: "Xavi spent his entire career at Barcelona, where he became an icon of the club and won numerous domestic and international titles.",
@@ -304,8 +314,10 @@ export const playerData = [
     nationality: "Italy 🇮🇹",
     photo: Maldini,
     index: 16,
-    ChampionsLeague: 5,
-    SerieA: 7,
+    trophies: {
+      ChampionsLeague: 5,
+      SerieA: 7
+    },
     description: {
       notableMoments: "Paolo Maldini is regarded as one of the greatest defenders in the history of football. He spent his entire professional career at AC Milan, where he won numerous domestic and international titles, including five UEFA Champions League titles.",
       teamsPlayed: "Maldini played his entire career at AC Milan, where he established himself as a club legend and one of the best defenders of all time.",
@@ -319,10 +331,12 @@ export const playerData = [
     nationality: "Germany 🇩🇪",
     photo: GerdMuller,
     index: 17,
-    BallonDor: 1,
-    ChampionsLeague: 3,
-    WorldCup: 1,
-    GoldenBoots: 7,
+    trophies: {
+      BallonDor: 1,
+      ChampionsLeague: 3,
+      WorldCup: 1,
+      GoldenBoots: 7
+    },
     description: {
       notableMoments: "Gerd Muller is famous for his prolific goal-scoring ability. He scored a remarkable 365 goals in 427 appearances for Bayern Munich and played a key role in Germany's success during the 1970s.",
       teamsPlayed: "Muller spent the majority of his career at Bayern Munich, where he achieved great success and won multiple domestic and international titles.",
@@ -336,7 +350,9 @@ export const playerData = [
     nationality: "Italy 🇮🇹",
     photo: Baggio,
     index: 18,
-    SerieA: 1,
+    trophies: {
+      SerieA: 1
+    },
     description: {
       notableMoments: "Roberto Baggio is famous for his technical skills, creativity, and iconic ponytail. He had numerous memorable moments throughout his career, including his performances in the 1994 World Cup and his incredible goal against Czechoslovakia in the 1990 World Cup.",
       teamsPlayed: "Baggio played for several top clubs in Italy, including Fiorentina, Juventus, AC Milan, and Inter Milan, where he achieved success and won domestic titles.",
@@ -350,8 +366,10 @@ export const playerData = [
     nationality: "Russia 🇷🇺",
     photo: Yashin,
     index: 19,
-    BallonDor: 1,
-    WorldCup: 1,
+    trophies: {
+      WorldCup: 1,
+      BallonDor: 1
+    },
     description: {
       notableMoments: "Lev Yashin, also known as the 'Black Spider,' is famous for revolutionizing the goalkeeping position. He was a key player for the Soviet Union national team and played a crucial role in their success, including reaching the European Championship final in 1964.",
       teamsPlayed: "Yashin spent his entire career playing for Dynamo Moscow, where he achieved significant success and won numerous domestic titles.",
@@ -365,8 +383,10 @@ export const playerData = [
     nationality: "Hungary 🇭🇺",
     photo: Ferenc,
     index: 20,
-    GoldenBoots: 4,
-    LaLiga: 5,
+    trophies: {
+      GoldenBoots: 4,
+      LaLiga: 5
+    },
     description: {
       notableMoments: "Ferenc Puskás is famous for his goal-scoring prowess and his contributions to the Hungarian national team during the 1950s. He played a crucial role in the legendary Hungarian team known as the 'Magical Magyars'.",
       teamsPlayed: "Puskás achieved great success at both club and international level. He played for Budapest Honvéd in Hungary and later joined Real Madrid, where he won numerous domestic and European titles.",
