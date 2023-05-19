@@ -32,6 +32,11 @@ export const MobileNav = ({ open, setOpen}) => {
               <a onClick={handleLinkClick}>Home</a>
             </Link>
           </div>
+          <div className="py-4 text-sm md:text-base font-semibold">
+            <Link href="/legends" legacyBehavior>
+              <a onClick={handleLinkClick}>Players</a>
+            </Link>
+          </div>
           {user && (
             <>
               <div className="py-4 text-sm md:text-base font-semibold">
