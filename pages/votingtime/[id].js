@@ -29,7 +29,7 @@ export default function PlayerPage({ player }) {
 
         <div className="flex-1 space-y-10">
           <div>
-            <h2 className="text-xl font-bold tracking-tighter sm:text-3xl md:text-4xl pb-3">Trophies</h2>
+            <h2 className="text-xl font-bold tracking-tighter sm:text-3xl md:text-4xl pb-3">Major Trophies</h2>
             <ul>
               {Object.entries(player.trophies).map(([trophy, number]) => (
                 <li key={trophy} className='py-0.5'>

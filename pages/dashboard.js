@@ -23,7 +23,7 @@ const Dashboard = () => {
                     <h1 className="font-bold text-3xl md:text-4xl pb-5">Settings</h1>
                     <p className="py-1 text-lg text-muted-foreground">
                         Hello <span className="font-semibold">{user && user.displayName}</span>
-                        , welcome to your account and website settings. 
+                        , welcome to your account and website settings. Your registered email is <span className="font-semibold">{user && user.email}</span>
                     </p>
                     <p className="py-1 text-lg text-muted-foreground">
                         Here, you can manage various aspects of your account and website to ensure they are tailored to your preferences and needs.
