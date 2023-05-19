@@ -49,7 +49,7 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center text-sm font-medium transition-colors focus:outline-none focus:ring-2  disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-transparent border border-slate-200 hover:bg-slate-100 h-11 px-8 rounded-md"
-                href="https://github.com/dunyanong/FVG"
+                href="https://github.com/dunyanong/FGV"
               >
                 GitHub
               </a>

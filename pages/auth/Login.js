@@ -67,7 +67,7 @@ const Login = () => {
         <h3 className="py-4">Enter your email to sign in to your account</h3>
         <button
           onClick={GoogleLogin}
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-slate-900 text-white hover:bg-slate-700 h-10 py-2 px-4"
+          className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none data-[state=open]:bg-slate-100 bg-slate-900 text-white hover:bg-slate-700 h-10 py-6 sm:py-5 md:py-2 px-4"
         >
           <AiOutlineGoogle className="text-2xl" />
           Sign in with Google

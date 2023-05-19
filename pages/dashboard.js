@@ -20,8 +20,14 @@ const Dashboard = () => {
             </Head>
             <div className="flex items-center justify-between px-2">
                 <div className="grid gap-1">
-                    <h1 className="font-bold text-3xl md:text-4xl">Settings</h1>
-                    <p className="py-5 text-lg text-muted-foreground">Hello <span className="font-semibold">{user && user.displayName}</span>, welcome to your account and website settings. Here, you can manage various aspects of your account and website to ensure they are tailored to your preferences and needs.</p>
+                    <h1 className="font-bold text-3xl md:text-4xl pb-5">Settings</h1>
+                    <p className="py-1 text-lg text-muted-foreground">
+                        Hello <span className="font-semibold">{user && user.displayName}</span>
+                        , welcome to your account and website settings. 
+                    </p>
+                    <p className="py-1 text-lg text-muted-foreground">
+                        Here, you can manage various aspects of your account and website to ensure they are tailored to your preferences and needs.
+                    </p>
                 </div>
             </div>
             <DeleteAccount />

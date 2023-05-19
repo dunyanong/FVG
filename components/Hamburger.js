@@ -32,23 +32,20 @@ export const MobileNav = ({ open, setOpen}) => {
               <a onClick={handleLinkClick}>Home</a>
             </Link>
           </div>
-          <div className="py-4 text-sm md:text-base font-semibold">
-            <Link href="/chat" legacyBehavior>
-              <a onClick={handleLinkClick}>Chat</a>
-            </Link>
-          </div>          
-          { user && (
-            <div className="py-4 text-sm md:text-base font-semibold">
-              <Link href="/ranking" legacyBehavior>
-                <a onClick={handleLinkClick}>Ranking</a>
-              </Link>
-            </div>
-          )} 
-          <div className="py-4 text-sm md:text-base font-semibold">
-            <Link href="/auth/Login" legacyBehavior>
-              <a className="py-4 font-semibold" onClick={handleLinkClick}>Join Now</a>
-            </Link>
-          </div>
+          {user && (
+            <>
+              <div className="py-4 text-sm md:text-base font-semibold">
+                <Link href="/chat" legacyBehavior>
+                  <a onClick={handleLinkClick}>Chat</a>
+                </Link>
+              </div>    
+              <div className="py-4 text-sm md:text-base font-semibold">
+                <Link href="/ranking" legacyBehavior>
+                  <a onClick={handleLinkClick}>Ranking</a>
+                </Link>
+              </div>
+            </>
+          )}
           <div className="text-sm">
           {!user && (
               <div className="flex flex-col justify-center items-center">

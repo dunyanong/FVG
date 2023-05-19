@@ -28,13 +28,13 @@ export const playerData = [
     photo: Messi,
     index: 1,
     trophies: {
-      WorldCup: 1,
-      ChampionsLeague: 4,
-      BallonDor: 7,
-      GoldenBoots: 6,
-      CopaAmerica: 1,
-      LaLiga: 10,
-    },
+      'World Cup': 1,
+      'Champions League': 4,
+      'Ballon dor': 7,
+      'Golden Boots': 6,
+      'Copa America': 1,
+      'La Liga': 10,
+    },    
     description: {
       notableMoments: "Lionel Messi is known for his incredible dribbling skills, scoring ability, and playmaking. Some of his notable moments include scoring a last-minute goal against Real Madrid in El Clasico, his solo goal against Getafe which was compared to Maradona's 'Hand of God' goal, and his stunning free-kick goals.",
       teamsPlayed: "Throughout his career, Messi played for FC Barcelona, where he achieved immense success, winning numerous domestic and international titles. In 2021, he moved to Paris Saint-Germain (PSG) to continue his football journey.",
@@ -50,12 +50,12 @@ export const playerData = [
     photo: CR7,
     index: 2,
     trophies: {
-      ChampionsLeague: 5,
-      BallonDor: 5,
-      GoldenBoots: 4,
-      Euro: 1,
-      PremierLeague: 3,
-      LaLiga: 2,
+      "Champions League": 5,
+      "Ballon Dor": 5,
+      "Golden Boots": 4,
+      "Euro": 1,
+      "Premier League": 3,
+      "LaLiga": 2
     },
     description: {
       notableMoments: "Cristiano Ronaldo is known for his athleticism, goal-scoring ability, and aerial prowess. Some of his notable moments include his incredible bicycle kick goal against Juventus, his last-minute header in the UEFA Euro 2016 final, and his numerous hat-tricks in various competitions.",
@@ -72,10 +72,10 @@ export const playerData = [
     photo: Pele,
     index: 3,
     trophies: {
-      WorldCup: 3,
+      "World Cup": 3,
     },
     description: {
-      notableMoments: "Pele is widely regarded as one of the greatest footballers in history. Some of his notable moments include winning the FIFA World Cup three times with the Brazilian national team, scoring over 1,000 career goals, and his incredible performances in the 1970 World Cup.",
+      notableMoments: "Pele is widely regarded as one of the greatest footballers in history. Some of his notable moments include winning the FIFA World Cup three times with the Brazilian national team, scoring over 1,000 career goals, and his incredible performances in the 1970 World Cup. He was also the youngest player to win a World Cup, at the age of 17.",
       teamsPlayed: "Pele spent the majority of his career playing for Santos FC in Brazil. He also had a brief stint with the New York Cosmos in the United States.",
       craziestRecords: "Pele holds numerous records, including being the all-time top scorer for the Brazilian national team, winning the most World Cups as a player, and scoring the most hat-tricks in professional football.",
       playingStyle: "Pele was known for his exceptional technical skills, speed, and agility. He had excellent control over the ball, great vision, and a deadly finishing ability.",
@@ -89,7 +89,7 @@ export const playerData = [
     photo: Maradona,
     index: 4,
     trophies: {
-      WorldCup: 1,
+      "World Cup": 1,
     },
     description: {
       notableMoments: "Maradona is remembered for his remarkable performances in the 1986 FIFA World Cup. His most notable moments include his 'Hand of God' goal against England and his mesmerizing solo goal against the same opponent, which was voted the 'Goal of the Century.'",
@@ -106,10 +106,10 @@ export const playerData = [
     photo: JohanCruyff,
     index: 5,
     trophies: {
-      ChampionsLeague: 3,
-      BallonDor: 3,
-      Euro: 1,
-      Eredivisie: 10,
+      "Champions League": 3,
+      "Ballon d'Or": 3,
+      "Euro": 1,
+      "Eredivisie": 10,
     },
     description: {
       notableMoments: "Johan Cruyff is regarded as one of the most influential players in football history. Some of his notable moments include leading Ajax Amsterdam to three consecutive European Cup victories, guiding the Netherlands to the World Cup final in 1974, and his innovative playing style known as 'Total Football.'",
@@ -126,10 +126,10 @@ export const playerData = [
     photo: ZinedineZidane,
     index: 6,
     trophies: {
-      ChampionsLeague: 3,
-      BallonDor: 1,
-      LaLiga: 2,
-      SerieA: 2,
+      "Champions League": 3,
+      "Ballon Dor": 1,
+      "La Liga": 2,
+      "Serie A": 2,
     },
     description: {
       notableMoments: "Zinedine Zidane is known for his elegance, vision, and incredible skill on the ball. Some of his notable moments include scoring two goals in the 1998 FIFA World Cup final, leading France to victory, and his stunning volley goal in the 2002 UEFA Champions League final.",
@@ -146,9 +146,9 @@ export const playerData = [
     photo: AlfredoDiStefano,
     index: 7,
     trophies: {
-      ChampionsLeague: 5,
-      BallonDor: 2,
-      LaLiga: 8,
+      "Champions League": 5,
+      "Ballon Dor": 2,
+      "La Liga": 8,
     },
     description: {
       notableMoments: "Alfredo Di Stefano is regarded as one of the greatest footballers of all time. Some of his notable moments include leading Real Madrid to five consecutive European Cup victories, his incredible goal-scoring record, and his exceptional performances in El Clasico matches.",
@@ -165,8 +165,8 @@ export const playerData = [
     photo: Garrincha,
     index: 8,
     trophies: {
-      WorldCup: 2,
-      CopaAmerica: 2,
+      "World Cup": 2,
+      "Copa America": 2,
     },
     description: {
       notableMoments: "Garrincha, known as the 'Joy of the People,' was an exceptional dribbler and one of the key players in Brazil's success during the 1958 and 1962 FIFA World Cups. He mesmerized audiences with his skill, agility, and unpredictable playing style.",
@@ -182,11 +182,10 @@ export const playerData = [
     photo: R9,
     index: 9,
     trophies: {
-      WorldCup: 2,
-      ChampionsLeague: 2,
-      BallonDor: 2,
-      LaLiga: 1,
-      SerieA: 1,
+      "World Cup": 2,
+      "Ballon Dor": 2,
+      "La Liga": 1,
+      "Serie A": 1,
     },
     description: {
       notableMoments: "Ronaldo Nazario, also known as Ronaldo Fenômeno, was a prolific goalscorer known for his explosive speed, technical skills, and clinical finishing. Some of his notable moments include leading Brazil to World Cup glory in 1994 and 2002 and his remarkable performances for clubs like Barcelona, Inter Milan, and Real Madrid.",
@@ -202,12 +201,12 @@ export const playerData = [
     photo: Ronaldinho,
     index: 10,
     trophies: {
-      BallonDor: 1,
-      CopaAmerica: 2,
-      ChampionsLeague: 1,
-      WorldCup: 1,
-      LaLiga: 2,
-      SerieA: 2,
+      "Ballon Dor": 1,
+      "Copa America": 2,
+      "Champions League": 1,
+      "World Cup": 1,
+      "La Liga": 2,
+      "Serie A": 2,
     },
     description: {
       notableMoments: "Ronaldinho's career was filled with remarkable moments, including his dazzling performances for Barcelona, his crucial role in Brazil's 2002 World Cup triumph, and his individual brilliance, such as his famous no-look assist against Chelsea in the Champions League.",
@@ -223,10 +222,10 @@ export const playerData = [
     photo: Platini,
     index: 11,
     trophies: {
-      BallonDor: 3,
-      SerieA: 2,
-      LigueA: 7,
-      Euro: 1
+      "Ballon Dor": 3,
+      "Serie A": 2,
+      "Ligue A": 7,
+      "Euro": 1
     },
     description: {
       notableMoments: "Michel Platini had a remarkable career that included leading France to victory in the 1984 UEFA European Championship, where he was the tournament's top scorer. He was known for his vision, technical ability, and ability to score goals from midfield.",
@@ -242,10 +241,10 @@ export const playerData = [
     photo: Beckenbauer,
     index: 12,
     trophies: {
-      BallonDor: 2,
-      ChampionsLeague: 3,
-      WorldCup: 1,
-      Bundesliga: 5
+      "Ballon Dor": 2,
+      "Champions League": 3,
+      "World Cup": 1,
+      "Bundesliga": 5
     },
     description: {
       notableMoments: "Franz Beckenbauer is known for his exceptional leadership and versatility on the field. He captained West Germany to victory in the 1974 FIFA World Cup as both a player and a coach, earning him the nickname 'Der Kaiser.'",
@@ -261,7 +260,7 @@ export const playerData = [
     photo: GeorgeBest,
     index: 13,
     trophies: {
-      BallonDor: 1
+      "Ballon Dor": 1
     },
     description: {
       notableMoments: "George Best was a talented and flamboyant winger who played for Manchester United during the 1960s and 1970s. He was known for his exceptional dribbling skills, agility, and goal-scoring ability.",
@@ -277,10 +276,10 @@ export const playerData = [
     photo: Iniesta,
     index: 14,
     trophies: {
-      ChampionsLeague: 4,
-      WorldCup: 1,
-      LaLiga: 9,
-      Euro: 2
+      "Champions League": 4,
+      "World Cup": 1,
+      "La Liga": 9,
+      "Euro": 2
     },
     description: {
       notableMoments: "Andres Iniesta is widely known for his memorable winning goal in the final of the 2010 FIFA World Cup, which secured Spain's first-ever World Cup triumph. He played a crucial role in Spain's golden era, winning multiple titles with both the national team and Barcelona.",
@@ -296,10 +295,10 @@ export const playerData = [
     photo: Xavi,
     index: 15,
     trophies: {
-      ChampionsLeague: 4,
-      WorldCup: 1,
-      LaLiga: 8,
-      Euro: 2
+      "Champions League": 4,
+      "World Cup": 1,
+      "La Liga": 8,
+      "Euro": 2
     },
     description: {
       notableMoments: "Xavi Hernandez was the maestro of Barcelona's midfield during their golden era under Pep Guardiola. He played a key role in Spain's success, winning the 2010 World Cup and the European Championships in 2008 and 2012.",
@@ -315,8 +314,8 @@ export const playerData = [
     photo: Maldini,
     index: 16,
     trophies: {
-      ChampionsLeague: 5,
-      SerieA: 7
+      "Champions League": 5,
+      "Serie A": 7
     },
     description: {
       notableMoments: "Paolo Maldini is regarded as one of the greatest defenders in the history of football. He spent his entire professional career at AC Milan, where he won numerous domestic and international titles, including five UEFA Champions League titles.",
@@ -332,10 +331,10 @@ export const playerData = [
     photo: GerdMuller,
     index: 17,
     trophies: {
-      BallonDor: 1,
-      ChampionsLeague: 3,
-      WorldCup: 1,
-      GoldenBoots: 7
+      "Ballon Dor": 1,
+      "Champions League": 3,
+      "World Cup": 1,
+      "Golden Boots": 7
     },
     description: {
       notableMoments: "Gerd Muller is famous for his prolific goal-scoring ability. He scored a remarkable 365 goals in 427 appearances for Bayern Munich and played a key role in Germany's success during the 1970s.",
@@ -351,7 +350,7 @@ export const playerData = [
     photo: Baggio,
     index: 18,
     trophies: {
-      SerieA: 1
+      "Serie A": 1
     },
     description: {
       notableMoments: "Roberto Baggio is famous for his technical skills, creativity, and iconic ponytail. He had numerous memorable moments throughout his career, including his performances in the 1994 World Cup and his incredible goal against Czechoslovakia in the 1990 World Cup.",
@@ -367,8 +366,8 @@ export const playerData = [
     photo: Yashin,
     index: 19,
     trophies: {
-      WorldCup: 1,
-      BallonDor: 1
+      "World Cup": 1,
+      "Ballon Dor": 1
     },
     description: {
       notableMoments: "Lev Yashin, also known as the 'Black Spider,' is famous for revolutionizing the goalkeeping position. He was a key player for the Soviet Union national team and played a crucial role in their success, including reaching the European Championship final in 1964.",
@@ -384,8 +383,8 @@ export const playerData = [
     photo: Ferenc,
     index: 20,
     trophies: {
-      GoldenBoots: 4,
-      LaLiga: 5
+      "Golden Boots": 4,
+      "La Liga": 5
     },
     description: {
       notableMoments: "Ferenc Puskás is famous for his goal-scoring prowess and his contributions to the Hungarian national team during the 1950s. He played a crucial role in the legendary Hungarian team known as the 'Magical Magyars'.",
