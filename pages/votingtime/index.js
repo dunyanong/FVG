@@ -19,12 +19,14 @@ import {
 } from "firebase/firestore";
 import PlayerCard from '../../components/PlayerCard';
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const VoteTime = () => {
   const [user, loading] = useAuthState(auth);
   const [goatVote, setGoatVote] = useState(null);
   const [honorableMentionVote, setHonorableMentionVote] = useState(null);
   const [hasVoted, setHasVoted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (!user) {
@@ -90,6 +92,10 @@ const VoteTime = () => {
       });
     }
   };
+
+  if (user) {
+    router.push('/ranking');
+  }
 
   return (
     <div>

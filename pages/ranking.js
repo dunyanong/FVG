@@ -109,7 +109,14 @@ const VoteTime = () => {
       <div className="grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">Ranking 📈</h1>
-          <p className="text-xl text-slate-600">Here, you can explore the final rankings of the greatest football players of all time as voted by our audience.</p>
+          {user && (
+            <p className="text-xl text-slate-600">
+              Great, you have voted!
+            </p>
+          )}
+          <p className="text-xl text-slate-600">
+            Here, you can explore the final rankings of the greatest football players of all time as voted by our audience.
+          </p>          
         </div>
 
         <hr className="py-8 border-slate-200" />
