@@ -20,7 +20,7 @@ export default function PlayerPage({ player }) {
       <div className="flex justify-center">
         <div className='grid items-center justify-center gap-6 pt-20 md:pt-10 md:pb-12 lg:pt-8 lg:pb-10 max-w-3xl'>
         <div className="flex-1 space-y-4">
-          <Image src={player.photo} />
+          <Image src={player.photo} alt={player.legendName}/>
           <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">{player.legendName}</h1>
           <p className="text-xl text-slate-600">{player.nationality}</p>
         </div>
@@ -40,16 +40,16 @@ export default function PlayerPage({ player }) {
           </div>          
           <div className='space-y-3'>
             <h2 className="text-xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Notable moments</h2>
-            <p className="text-xl text-slate-600">{player.description.notableMoments}</p>
-            <p className="text-xl text-slate-600">{player.description.whyFamous}</p>
+            <p className="text-lg text-slate-600">{player.description.notableMoments}</p>
+            <p className="text-lg text-slate-600">{player.description.whyFamous}</p>
           </div>
           <div className='space-y-3'>
-            <h2 className="text-1xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Teams Played</h2>
-            <p className="text-xl text-slate-600">{player.description.teamsPlayed}</p>
+            <h2 className="text-xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Teams Played</h2>
+            <p className="text-lg text-slate-600">{player.description.teamsPlayed}</p>
           </div>
           <div className='space-y-3'>
-            <h2 className="text-1xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Playing Style</h2>
-            <p className="text-xl text-slate-600">{player.description.playingStyle}</p>
+            <h2 className="text-xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Playing Style</h2>
+            <p className="text-lg text-slate-600">{player.description.playingStyle}</p>
           </div>
         </div>
         </div>
