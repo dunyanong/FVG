@@ -93,7 +93,7 @@ const VoteTime = () => {
     }
   };
 
-  if (user) {
+  if (hasVoted) {
     router.push('/ranking');
   }
 
