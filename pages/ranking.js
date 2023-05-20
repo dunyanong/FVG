@@ -12,7 +12,7 @@ import {
   onSnapshot,
   setDoc,
 } from "firebase/firestore";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -20,6 +20,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const VoteTime = () => {
   const [playerData, setPlayerData] = useState([]);
   const [user, loading] = useAuthState(auth)
+  const chartRef = useRef(null); // Reference to the Chart instance
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,10 +83,17 @@ const VoteTime = () => {
             categoryPercentage: 1.0 // Increase this value to make the bars taller
           }
         }
-      };          
+      };
 
       const ctx = document.getElementById('chart').getContext('2d');
-      new Chart(ctx, {
+      
+      // Destroy the previous instance of the Chart if it exists
+      if (chartRef.current) {
+        chartRef.current.destroy();
+      }
+      
+      // Create a new Chart instance and store the reference
+      chartRef.current = new Chart(ctx, {
         type: 'bar',
         data: chartData,
         options: chartOptions
